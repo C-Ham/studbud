@@ -1,5 +1,49 @@
+@import "https://rsms.me/inter/inter.css";
+html {
+  font-family: Inter, sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: Inter var, sans-serif;
+  }
+}
+
 body {
-  background-color: bisque;
+  background-color: #031126;
+}
+
+.logo {
+  color: #ebecf0;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  font-family: agenda-one, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.sidenav {
+  width: 10%;
+  height: 100%;
+  background-color: #021530;
+  border-right: 1px solid #1d2a3e;
+  padding-left: 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sidenav-link {
+  color: #808dad;
+  padding-bottom: 2em;
+  font-family: Inter;
+  text-decoration: none;
+  display: block;
+}
+
+.sidenav-link:hover {
+  color: #ebecf0;
 }
 
 /*# sourceMappingURL=index.c74267d1.css.map */
