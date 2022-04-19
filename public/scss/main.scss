@@ -24,11 +24,11 @@ body {
 .logo {
     color: $textWhite;
     font-family: agenda-one, sans-serif;
-    font-size: 25px;
+    font-size: 28px;
     font-weight: 700;
     font-style: normal;
     padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-bottom: 1em;
 }
 
 .sidenav {
@@ -45,11 +45,24 @@ body {
 .sidenav-link {
     font-family: Inter;
     text-decoration: none;
-    display: block;
+    display: flex;
     padding-bottom: 2em;
-    color: $subtextGray;
+    color: $textWhite;
+    opacity: 50%;
 }
 
 .sidenav-link:hover {
-    color: $textWhite;
+    opacity:100%;
+}
+
+.nav-icon {
+    width: 16px;
+    height: 100%;
+    padding-right: 1em;
+}
+
+.logo-icon {
+    width: 20px;
+    height: 100%;
+    padding-right:5px;
 }
