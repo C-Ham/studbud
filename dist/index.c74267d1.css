@@ -15,8 +15,8 @@ body {
 
 .logo {
   color: #ebecf0;
+  margin-left: .5em;
   padding-top: .5em;
-  padding-bottom: 1em;
   font-family: agenda-one, sans-serif;
   font-size: 28px;
   font-style: normal;
@@ -28,29 +28,44 @@ body {
   height: 100%;
   background-color: #021530;
   border-right: 1px solid #1d2a3e;
-  padding-left: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .sidenav-link {
-  color: #ebecf0;
-  opacity: .5;
-  padding-bottom: 2em;
+  color: #808dad;
+  border-radius: 5px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
   font-family: Inter;
   text-decoration: none;
   display: flex;
 }
 
 .sidenav-link:hover {
-  opacity: 1;
+  color: #ebecf0;
+  background-color: #091e42;
+}
+
+.sidenav > .active {
+  color: #ebecf0;
+  pointer-events: none;
+  background-color: #6554c0;
 }
 
 .nav-icon {
   width: 16px;
   height: 100%;
+  filter: brightness(0) saturate() invert(62%) sepia(15%) saturate(591%) hue-rotate(185deg) brightness(86%) contrast(90%);
   padding-right: 1em;
+}
+
+.sidenav > .active > .nav-icon, .sidenav-link:hover > .nav-icon {
+  filter: none;
 }
 
 .logo-icon {

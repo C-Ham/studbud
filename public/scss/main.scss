@@ -17,6 +17,8 @@ $errorRed: #FF5630;
 $helpPurple: #6554C0;
 $accentTeal: #00B8D9;
 
+$iconGray: brightness(0) saturate(100%) invert(62%) sepia(15%) saturate(591%) hue-rotate(185deg) brightness(86%) contrast(90%);
+
 body {
     background-color: $baseGray;
 }
@@ -28,7 +30,7 @@ body {
     font-weight: 700;
     font-style: normal;
     padding-top: 0.5em;
-    padding-bottom: 1em;
+    margin-left: 0.5em;
 }
 
 .sidenav {
@@ -37,7 +39,8 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
-    padding-left: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
     background-color: $navGray;
     border-right: 1px solid #1d2a3e;
 }
@@ -46,19 +49,33 @@ body {
     font-family: Inter;
     text-decoration: none;
     display: flex;
-    padding-bottom: 2em;
-    color: $textWhite;
-    opacity: 50%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    color: $subtextGray;
+    border-radius: 5px;
 }
 
 .sidenav-link:hover {
-    opacity:100%;
+    background-color: $modalGray;
+    color: $textWhite;
+}
+
+.sidenav > .active {
+    background-color: $helpPurple;
+    color: $textWhite;
+    pointer-events: none;
 }
 
 .nav-icon {
     width: 16px;
     height: 100%;
     padding-right: 1em;
+    filter: $iconGray;
+}
+
+.sidenav > .active > .nav-icon, .sidenav-link:hover > .nav-icon {
+    filter: none;
 }
 
 .logo-icon {
