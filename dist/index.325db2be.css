@@ -59,7 +59,7 @@ p {
   background-color: #091e42;
   border-radius: 3px;
   margin-bottom: 5px;
-  padding: 10px 15px;
+  padding: 15px;
 }
 
 .kanban__column-task:hover {
@@ -76,14 +76,17 @@ p {
 
 .low-priority {
   color: #36b37e;
+  margin: 0;
 }
 
 .med-priority {
   color: #ffab00;
+  margin: 0;
 }
 
 .high-priority {
   color: #ff5630;
+  margin: 0;
 }
 
 .kanban__button {
@@ -101,6 +104,74 @@ p {
 
 .kanban__button:hover {
   background-color: #031126;
+}
+
+html {
+  font-family: Inter, sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: Inter var, sans-serif;
+  }
+}
+
+h2 {
+  color: #808dad;
+  margin-bottom: 40px;
+  font-family: Inter Medium;
+  font-size: 18px;
+}
+
+.modal {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: #000610d9;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.modal-popup {
+  box-sizing: border-box;
+  width: 60%;
+  color: #fff;
+  background-color: #021530;
+  border-radius: 5px;
+  margin: 10% auto;
+  padding: 40px 100px;
+}
+
+.modal-popup > label {
+  color: #ebecf0;
+  padding-bottom: 5px;
+  font-family: Inter SemiBold;
+  font-size: 13px;
+}
+
+::placeholder {
+  color: #808dad;
+  font-family: Inter;
+}
+
+.modal-popup > input {
+  width: 100%;
+  color: #ebecf0;
+  background-color: #091e42;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  padding: 10px 15px;
+  font-family: Inter;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+  background-color: #0b2550;
+  outline: none;
 }
 
 @supports (font-variation-settings: normal) {

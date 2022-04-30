@@ -12,6 +12,17 @@
     <script src="scripts/kanban.js" defer></script>
 </head>
 <body>
+    <div id="modal" class="modal">
+        <div class="modal-popup">
+            <h2>Add New Task</h2>
+            <label for="task-title">TASK TITLE *</label><br>
+            <input type="text" id="task-title" name="task-title" placeholder="JavaScript Quiz"><br>
+
+            <label for="task-desc">TASK DESCRIPTION</label><br>
+            <input type="text" id="task-desc" name="task-desc" placeholder="Brush up on JS fundamentals like arrays, strings, and variables"><br>
+        </div>
+    </div>
+
     <div class="sidenav">
         <h3 class="logo"><object class="logo-icon" data="images/spiral-logo.svg"></object>Spiral.io</h3>
         <a href="#" id="1" class="sidenav-link active" onclick="makeActive(this.id)"><object class="nav-icon" data="images/plan-icon.svg"></object>Plan</a>
