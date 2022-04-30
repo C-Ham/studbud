@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/index.c74267d1.css">
+    <link rel="stylesheet" href="/index.325db2be.css">
     <link rel="stylesheet" href="https://use.typekit.net/hov6pfb.css">
     <title>Spiral.io</title>
     <link rel="shortcut icon" type="”image/svg+xml”" href="/spiral-logo.73249af3.svg">
-    <script src="/index.f3bd186e.js" defer=""></script>
+    <script src="/index.4cd70b43.js" defer=""></script>
+    <script src="/index.aa2a3b63.js" defer=""></script>
 </head>
 <body>
     <div class="sidenav">
@@ -16,6 +17,30 @@
         <a href="#" id="1" class="sidenav-link active" onclick="makeActive(this.id)"><object class="nav-icon" data="/plan-icon.19e245f0.svg"></object>Plan</a>
         <a href="# " id="2" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="/focus-icon.50f9d746.svg"></object>Focus</a>
         <a href="#" id="3" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="/learn-icon.7d83518e.svg"></object>Learn</a>
+    </div>
+
+    <div class="kanban">
+
+        <div class="kanban__column">
+            <div class="kanban__column-title">TO-DO</div>
+            <div id="kanban__column-items" class="kanban__column-items">
+            </div>
+            <button alt="Add Task" class="kanban__button">+</button>
+        </div>
+
+        <div class="kanban__column">
+            <div class="kanban__column-title">IN PROGRESS</div>
+            <div id="kanban__column-items" class="kanban__column-items">
+            </div>
+            <button alt="Add Task" class="kanban__button">+</button>
+        </div>
+
+        <div class="kanban__column">
+            <div class="kanban__column-title">DONE</div>
+            <div id="kanban__column-items" class="kanban__column-items">
+            </div>
+            <button alt="Add Task" class="kanban__button">+</button>
+        </div>
     </div>
 </body>
 </html>

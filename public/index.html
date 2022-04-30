@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/main.scss">
+    <link rel="stylesheet" href="scss/nav.scss">
     <link rel="stylesheet" href="https://use.typekit.net/hov6pfb.css">
     <title>Spiral.io</title>
     <link rel="shortcut icon" type=”image/svg+xml” href="images\spiral-logo.svg"/>
-    <script src="script.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/kanban.js" defer></script>
 </head>
 <body>
     <div class="sidenav">
@@ -16,6 +17,30 @@
         <a href="#" id="1" class="sidenav-link active" onclick="makeActive(this.id)"><object class="nav-icon" data="images/plan-icon.svg"></object>Plan</a>
         <a href="# "id="2" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="images/focus-icon.svg"></object>Focus</a>
         <a href="#" id="3" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="images/learn-icon.svg"></object>Learn</a>
+    </div>
+
+    <div class="kanban">
+
+        <div class="kanban__column">
+            <div class="kanban__column-title">TO-DO</div>
+            <div id="kanban__column-items" class="kanban__column-items">
+            </div>
+            <button alt="Add Task" class="kanban__button">+</button>
+        </div>
+
+        <div class="kanban__column">
+            <div class="kanban__column-title">IN PROGRESS</div>
+            <div id="kanban__column-items" class="kanban__column-items">
+            </div>
+            <button alt="Add Task" class="kanban__button">+</button>
+        </div>
+
+        <div class="kanban__column">
+            <div class="kanban__column-title">DONE</div>
+            <div id="kanban__column-items" class="kanban__column-items">
+            </div>
+            <button alt="Add Task" class="kanban__button">+</button>
+        </div>
     </div>
 </body>
 </html>
