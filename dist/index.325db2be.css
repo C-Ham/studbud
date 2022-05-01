@@ -192,20 +192,7 @@ h2 {
   font-family: Inter;
 }
 
-.modal-popup > input {
-  box-sizing: border-box;
-  width: 100%;
-  color: #ebecf0;
-  background-color: #091e42;
-  border: none;
-  border-radius: 5px;
-  margin-top: 5px;
-  margin-bottom: 30px;
-  padding: 10px 15px;
-  font-family: Inter;
-}
-
-.dropdown-wrapper > input {
+input {
   box-sizing: border-box;
   width: 100%;
   color: #ebecf0;
@@ -217,10 +204,6 @@ h2 {
   margin-bottom: 30px;
   padding: 10px 15px;
   font-family: Inter;
-}
-
-option {
-  padding: 10px 0;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -241,6 +224,7 @@ input:focus, select:focus, textarea:focus {
 .primary-btn {
   float: right;
   color: #ebecf0;
+  width: auto;
   background-color: #6554c0;
   border: none;
   border-radius: 5px;
@@ -293,7 +277,7 @@ body {
   border-right: 1px solid #1d2a3e;
   padding-left: 1em;
   padding-right: 1em;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 }

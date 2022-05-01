@@ -15,49 +15,51 @@
     <div id="modal" class="modal">
         <div class="modal-popup">
             <h2>Add New Task</h2>
-            <label for="task-title">TASK TITLE <span style="color: #FF5630">*</span></label><br>
-            <input type="text" id="task-title" name="task-title" placeholder="JavaScript Quiz"><br>
+            <form id="addtask">
+                <label for="task-title">TASK TITLE <span style="color: #FF5630">*</span></label><br>
+                <input type="text" id="task-title" name="task-title" placeholder="JavaScript Quiz"><br>
 
-            <label for="task-desc">TASK DESCRIPTION</label><br>
-            <input type="text" id="task-desc" name="task-desc" placeholder="Brush up on JS fundamentals like arrays, strings, and variables"><br>
+                <label for="task-desc">TASK DESCRIPTION <span style="color: #FF5630">*</span></label><br>
+                <input type="text" id="task-desc" name="task-desc" placeholder="Brush up on JS fundamentals like arrays, strings, and variables"><br>
 
-            <div class="dropdown-list">
-                <div class="dropdown-wrapper">
-                    <label for="priority">PRIORITY <span style="color: #FF5630">*</span></label><br>
-                    <select id="priority" name="priority">
-                        <option value="high">High</option>
-                        <option value="medium">Medium</option>
-                        <option value="low">Low</option>
-                    </select>
+                <div class="dropdown-list">
+                    <div class="dropdown-wrapper">
+                        <label for="priority">PRIORITY <span style="color: #FF5630">*</span></label><br>
+                        <select id="priority" name="priority">
+                            <option value="high">&#9670 &#9670 &#9670 High</option>
+                            <option value="medium">&#9670 &#9670 Medium</option>
+                            <option value="low">&#9670 Low</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown-wrapper">
+                        <label for="category">CATEGORY</label><br>
+                        <select id="category" name="category">
+                            <option value="0"></option>
+                            <option value="1">Category 1</option>
+                            <option value="2">Category 2</option>
+                            <option value="3">Category 3</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div class="dropdown-wrapper">
-                    <label for="category">CATEGORY</label><br>
-                    <select id="category" name="category">
-                        <option value="0">&#8212;</option>
-                        <option value="1">Category 1</option>
-                        <option value="2">Category 2</option>
-                        <option value="3">Category 3</option>
-                    </select>
-                </div>
-            </div>
+                <div class="dropdown-list">
+                    <div class="dropdown-wrapper">
+                        <label for="due-date">DUE DATE</label><br>
+                        <input type="date" id="due-date" name="due-date"><br>
+                    </div>
 
-            <div class="dropdown-list">
-                <div class="dropdown-wrapper">
-                    <label for="due-date">DUE DATE</label><br>
-                    <input type="date" id="due-date" name="due-date"><br>
+                    <div class="dropdown-wrapper">
+                        <label for="completion-time">TIME TO COMPLETE (HRS)</label><br>
+                        <input type="number" id="completion-time" name="completion-time" min="1" placeholder="0 hrs">
+                    </div>
                 </div>
 
-                <div class="dropdown-wrapper">
-                    <label for="completion-time">TIME TO COMPLETE (HRS)</label><br>
-                    <input type="number" id="completion-time" name="completion-time" min="1" placeholder="0 hrs">
+                <div class="button-wrapper">
+                    <button class="cancel-btn" onclick="closeModal()">CANCEL</button>
+                    <button type="button" class="primary-btn" onclick="onSubmit()">ADD TASK</button>
                 </div>
-            </div>
-
-            <div class="button-wrapper">
-                <button class="cancel-btn" onclick="closeModal()">CANCEL</button>
-                <button class="primary-btn">ADD TASK</button>
-            </div>
+            </form>
         </div>
     </div>
 

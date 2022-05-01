@@ -15,7 +15,7 @@
 88C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\regenerator-runtime\README.md132938571297979162 0
 90C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\workers\src\cpuCount.js132938571309083017 0
 89C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\cache\lib\LMDBCache.js132938571307746595 0
-50C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist132958746271609161 1
+50C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist132958777822814076 1
 90C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\caniuse-lite\data\regions\AX.js132938571317869503 0
 58C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules132938578068779782 1
 73C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\plugin132938571302370984 1
@@ -65,7 +65,7 @@
 68C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\commander132938571310628893 1
 76C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\binary-extensions132938571873730113 1
 104C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\reporter-dev-server\src\types.js.flow132938571306489959 0
-63C:\Users\neesh\Downloads\UNI\DECO2017\studbud\public\index.html132958746036086572 0
+63C:\Users\neesh\Downloads\UNI\DECO2017\studbud\public\index.html132958777821803283 0
 66C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\accepts132938565896061265 1
 76C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\csso\lib\usage.js132938571318577607 0
 57C:\Users\neesh\Downloads\UNI\DECO2017\studbud\public\scss132957585888260572 1
@@ -85,7 +85,7 @@
 89C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\source-map-js\lib\array-set.js132938571872513416 0
 76C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\svgo\lib\style.js132938571320951257 0
 86C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\source-map\lib\array-set.js132938571294209546 0
-68C:\Users\neesh\Downloads\UNI\DECO2017\studbud\public\scss\modal.scss132958746464990439 0
+68C:\Users\neesh\Downloads\UNI\DECO2017\studbud\public\scss\modal.scss132958762462665611 0
 72C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\array-flatten132938565895383115 1
 101C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\transformer-babel\lib\constants.js132938571309471978 0
 77C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\.package-lock.json132938578069487880 0
@@ -119,13 +119,13 @@
 104C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\caniuse-lite\data\features\input-inputmode.js132938571332959138 0
 82C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\node-addon-api\index.js132938571308295126 0
 68C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\ipaddr.js132938565895034021 1
-70C:\Users\neesh\Downloads\UNI\DECO2017\studbud\public\scripts\kanban.js132957544481241789 0
+70C:\Users\neesh\Downloads\UNI\DECO2017\studbud\public\scripts\kanban.js132958777324848333 0
 71C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\csso\LICENSE132938571292753149 0
 65C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\nanoid132938578024200246 1
 108C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\transformer-svg\test\parseFuncIRI.test.js132938571306679451 0
 81C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\plugin\LICENSE132938571299804279 0
 112C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\caniuse-lite\data\features\css-overscroll-behavior.js132938571327663292 0
-70C:\Users\neesh\Downloads\UNI\DECO2017\studbud\public\scripts\script.js132956690860600916 0
+70C:\Users\neesh\Downloads\UNI\DECO2017\studbud\public\scripts\script.js132958777686507152 0
 79C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\svgo\lib\svgo\coa.js132938571308424779 0
 108C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\transformer-image\lib\ImageTransformer.js132938571302031889 0
 95C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\css-what\lib\commonjs\index.d.ts.map132938571303527888 0
@@ -251,7 +251,7 @@
 82C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\react-refresh\README.md132938571303507935 0
 106C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\transformer-html\lib\HTMLTransformer.js132938571303677487 0
 71C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\lmdb\keys.js132938571324790983 0
-75C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\spiral-logo.73249af3.svg132958722119455618 0
+75C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\spiral-logo.73249af3.svg132958775271517191 0
 70C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\body-parser132938565899212834 1
 71C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\browserslist132938571308075712 1
 67C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\boolbase132938571293551011 1
@@ -604,7 +604,7 @@
 87C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\css-tree\lib\syntax\function132938571325070231 1
 103C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\terser\node_modules\source-map\lib\base64.js132938571312793092 0
 69C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\parse-json132938571295186651 1
-74C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\learn-icon.7d83518e.svg132958722119047605 0
+74C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\learn-icon.7d83518e.svg132958775271527171 0
 88C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@swc\helpers\src\_to_array.js132938571325818230 0
 85C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\term-size\vendor\.DS_Store132938571294398745 0
 73C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\path-to-regexp132938565895432952 1
@@ -1920,7 +1920,7 @@
 95C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\caniuse-lite\data\features\mathml.js132938571335374373 0
 83C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\ordered-binary\README.md132938571299265731 0
 90C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\ordered-binary\rollup.config.js132938571295665352 0
-72C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.4cd70b43.js.map132958722119415749 0
+72C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.4cd70b43.js.map132958777687238512 0
 106C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\lmdb\prebuilds\darwin-x64\node.abi93.glibc.node132938571337507310 0
 80C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\csso\lib\clean\Raw.js132938571317370845 0
 87C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\ordered-binary\tests\test.js132938571297001780 0
@@ -2631,7 +2631,7 @@
 101C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\htmlnano\lib\modules\collapseWhitespace.js132938571300671963 0
 86C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\bundler-default\src132938571306240628 1
 89C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\htmlnano\lib\modules\custom.js132938571301632956 0
-68C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.aa2a3b63.js132958722119425694 0
+68C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.aa2a3b63.js132958777325757498 0
 72C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\css-tree\data132938571325219842 1
 109C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\htmlnano\lib\modules\deduplicateAttributeValues.js132938571302450766 0
 94C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\caniuse-lite\data\features\const.js132938571323973166 0
@@ -2797,7 +2797,7 @@
 91C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\packager-js\src\utils.js132938571313521144 0
 79C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\chalk\source\util.js132938571308005900 0
 84C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\dotenv\lib\cli-options.js132938571302919514 0
-69C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.325db2be.css132958746271582031 0
+69C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.325db2be.css132958775271527171 0
 77C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\domutils\readme.md132938571308065765 0
 83C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\css-select\lib\sort.d.ts132938571314737885 0
 80C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\domutils\lib\feeds.js132938571292434002 0
@@ -3074,7 +3074,7 @@
 86C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\css-select\lib\procedure.js132938571300921291 0
 106C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\core\src\requests\BundleGraphRequest.js132938571319325607 0
 90C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\css-select\lib\pseudo-selectors132938571314867536 1
-73C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.325db2be.css.map132958746271582031 0
+73C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.325db2be.css.map132958775271527171 0
 87C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\css-select\lib\sort.d.ts.map132938571311416778 0
 84C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\css-select\lib\types.d.ts132938571315176724 0
 94C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\autoprefixer\lib\hacks\flex-spec.js132938578025456813 0
@@ -3603,7 +3603,7 @@
 110C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\@parcel\optimizer-htmlnano\src\HTMLNanoOptimizer.js132938571306629583 0
 110C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\caniuse-lite\data\features\extended-system-fonts.js132938571330435873 0
 99C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\caniuse-lite\data\features\filereader.js132938571330615389 0
-68C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.4cd70b43.js132958722119415749 0
+68C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.4cd70b43.js132958777687238512 0
 99C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\caniuse-lite\data\features\filesystem.js132938571330645314 0
 93C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\caniuse-lite\data\features\flac.js132938571330725099 0
 98C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\caniuse-lite\data\features\flow-root.js132938571330784958 0
@@ -4759,7 +4759,7 @@
 72C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\.bin\svgo.cmd132938571346516185 0
 72C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\.bin\svgo.ps1132938571346516185 0
 74C:\Users\neesh\Downloads\UNI\DECO2017\studbud\node_modules\.bin\terser.cmd132938571346526156 0
-74C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\focus-icon.50f9d746.svg132958722119455618 0
-72C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.aa2a3b63.js.map132958722119425694 0
-61C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.html132958746036989713 0
-73C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\plan-icon.19e245f0.svg132958722119047605 0
+74C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\focus-icon.50f9d746.svg132958775271517191 0
+72C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.aa2a3b63.js.map132958777325757498 0
+61C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\index.html132958777822804094 0
+73C:\Users\neesh\Downloads\UNI\DECO2017\studbud\dist\plan-icon.19e245f0.svg132958775271527171 0

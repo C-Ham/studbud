@@ -83,20 +83,7 @@ h2 {
     color: variables.$subtextGray;
 }
 
-.modal-popup > input {
-    box-sizing: border-box;
-    width: 100%;
-    background-color: variables.$modalGray;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    font-family: Inter;
-    color: variables.$textWhite;
-    margin-top: 5px;
-    margin-bottom: 30px;
-}
-
-.dropdown-wrapper > input {
+input {
     box-sizing: border-box;
     width: 100%;
     background-color: variables.$modalGray;
@@ -108,10 +95,6 @@ h2 {
     margin-top: 5px;
     margin-bottom: 30px;
     color-scheme: dark;
-}
-
-option {
-    padding: 10px 0;
 }
 
 input:focus,
@@ -140,6 +123,7 @@ textarea:focus {
     color: variables.$textWhite;
     padding: 10px 25px;
     border-radius: 5px;
+    width: auto;
 }
 
 .cancel-btn:hover {
