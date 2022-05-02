@@ -94,10 +94,18 @@ p {
     border:none;
     border-radius:3px;
     color: #2e4376;
-    margin-top:10px;
+    margin: 10px 0;
     padding-bottom:5px;
 }
 
 .kanban__button:hover {
     background-color:variables.$baseGray;
+}
+
+.drag-over {
+    background-color: #092957;
+}
+
+.hide {
+    display: none;
 }

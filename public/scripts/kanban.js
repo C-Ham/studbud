@@ -12,6 +12,10 @@ const completionTime = document.getElementById("completion-time");
 // Create an empty array to store tasks
 var taskList = [];
 
+function getRandomInt() {
+  return Math.floor(Math.random() * 99999);
+}
+
 //Triggered when submit button is clicked on the "Add Task" Modal
 function onSubmit() {
   //Form validation
@@ -73,6 +77,10 @@ function renderTask(task) {
   //Create an HTML element as a container for our task
   let item = document.createElement("div");
   item.classList.add('kanban__column-task');
+  item.setAttribute("draggable", true);
+  item.id = getRandomInt();
+
+  item.addEventListener('dragstart', dragStart);
 
   //Define color-coded priority icons using classes and unicode chars
   const lowPriority = "<div><p class='low-priority'>" + "&#9670" + "</p></div>";

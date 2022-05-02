@@ -96,7 +96,7 @@ p {
   background-color: #03112680;
   border: none;
   border-radius: 3px;
-  margin-top: 10px;
+  margin: 10px 0;
   padding-bottom: 5px;
   font-family: Inter Thin;
   font-size: 50px;
@@ -104,6 +104,14 @@ p {
 
 .kanban__button:hover {
   background-color: #031126;
+}
+
+.drag-over {
+  background-color: #092957;
+}
+
+.hide {
+  display: none;
 }
 
 html {
