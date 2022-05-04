@@ -6,6 +6,7 @@ const taskTitle = document.getElementById("task-title");
 const taskDesc = document.getElementById("task-desc");
 const priority = document.getElementById("priority");
 const category = document.getElementById("category");
+const categories = document.getElementById("categories");
 const dueDate = document.getElementById("due-date");
 const completionTime = document.getElementById("completion-time");
 
@@ -17,6 +18,8 @@ var categoryList = [];
 
 //List of available label colors
 var colorList = ["#6554C0", "#0065FF", "#FF5630", "#00B8D9", "#36B37E", "#FFAB00"]
+//Pointer to indicate which label color should be used next
+let colorPos = 0;
 
 //Generate (mostly) unique ID for each task
 function getRandomInt(max) {
@@ -76,28 +79,34 @@ function addTask(taskTitle, taskDescription, priorityRating, taskCategory, dueDa
   taskList.push(task);
 
   //Check to see if the category exists yet
-  let category;
+  let categoryObj;
   let catMap = categoryList.map(cat => cat.name);
   if(!catMap.includes(task.taskCategory)) {
-    //Define our category object
+    //If the category doesn't exist yet define our category object
     //Stores the category name and randomised label color
-    category = {
+    categoryObj = {
       name: task.taskCategory,
-      labelColor: colorList[getRandomInt(colorList.length)],
+      labelColor: colorList[colorPos],
     };
 
-    categoryList.push(category);
-    console.log("new category name added: " + task.taskCategory);
+    console.log(colorPos);
+    if (colorPos == colorList.length - 1) { colorPos = 0}
+    else { colorPos += 1; }
+
+    categoryList.push(categoryObj);
+
+    let catSelect = document.createElement("option");
+    catSelect.value = categoryObj.name;
+    categories.appendChild(catSelect);
   }
 
   //If the category name already exists, fetch it from the category list
   else {
-    category = categoryList[catMap.indexOf(task.taskCategory)];
-    console.log("existing category: " + task.taskCategory);
+    categoryObj = categoryList[catMap.indexOf(task.taskCategory)];
   }
 
   // Separate the DOM manipulation from the object creation logic
-  renderTask(task, category);
+  renderTask(task, categoryObj);
 }
 
 
@@ -123,10 +132,10 @@ function renderTask(task, cat) {
 
   //Add innerHTML for the task category, but hide the element if there is a blank input
   //Use the category object to set a randomised label color for new categories, and use the same color for existing ones
-  let category = "<div ><span class='task-category' style='float:right; background-color:" + cat.labelColor + "'>" + cat.name + "</span>";
+  let categoryDiv = "<div ><span class='task-category' style='float:right; background-color:" + cat.labelColor + "'>" + cat.name + "</span>";
   //If the task div label color is light, change the text color to black for accessibility
-  if(cat.labelColor == "#00B8D9" || cat.labelColor == "#36B37E" || cat.labelColor ==  "#FFAB00") { category = "<div ><span class='task-category' style='float:right; color: black; background-color:" + cat.labelColor + "'>" + cat.name + "</span>"; }
-  if((cat.name == "") || (!cat.name)) { category = "<div ><span class='task-category' style='float:right; display:none'>" + task.taskCategory + "</span>"; }
+  if(cat.labelColor == "#00B8D9" || cat.labelColor == "#36B37E" || cat.labelColor ==  "#FFAB00") { categoryDiv = "<div ><span class='task-category' style='float:right; color: black; background-color:" + cat.labelColor + "'>" + cat.name + "</span>"; }
+  if((cat.name == "") || (!cat.name)) { categoryDiv = "<div ><span class='task-category' style='float:right; display:none'>" + task.taskCategory + "</span>"; }
 
   let title = "<h4>" + task.taskTitle + "</h4></div>";
   let desc = "<div><p>" + task.taskDescription + "</p></div>";
@@ -138,7 +147,7 @@ function renderTask(task, cat) {
   let priority = taskPriority + "</div>";
 
   //Append task metadata into the DOM
-  item.innerHTML = category + title + desc + time + priority;
+  item.innerHTML = categoryDiv + title + desc + time + priority;
 
   //Append task to array
   tasklist.appendChild(item);

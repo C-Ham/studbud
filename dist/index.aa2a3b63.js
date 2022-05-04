@@ -5,6 +5,7 @@ const taskTitle = document.getElementById("task-title");
 const taskDesc = document.getElementById("task-desc");
 const priority = document.getElementById("priority");
 const category = document.getElementById("category");
+const categories = document.getElementById("categories");
 const dueDate = document.getElementById("due-date");
 const completionTime = document.getElementById("completion-time");
 // Create an empty array to store tasks
@@ -20,6 +21,8 @@ var colorList = [
     "#36B37E",
     "#FFAB00"
 ];
+//Pointer to indicate which label color should be used next
+let colorPos = 0;
 //Generate (mostly) unique ID for each task
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
@@ -62,24 +65,26 @@ function addTask(taskTitle1, taskDescription, priorityRating, taskCategory, dueD
     // Add the task to our array of tasks
     taskList.push(task);
     //Check to see if the category exists yet
-    let category1;
+    let categoryObj;
     let catMap = categoryList.map((cat)=>cat.name
     );
     if (!catMap.includes(task.taskCategory)) {
-        //Define our category object
+        //If the category doesn't exist yet define our category object
         //Stores the category name and randomised label color
-        category1 = {
+        categoryObj = {
             name: task.taskCategory,
-            labelColor: colorList[getRandomInt(colorList.length)]
+            labelColor: colorList[colorPos]
         };
-        categoryList.push(category1);
-        console.log("new category name added: " + task.taskCategory);
-    } else {
-        category1 = categoryList[catMap.indexOf(task.taskCategory)];
-        console.log("existing category: " + task.taskCategory);
-    }
+        console.log(colorPos);
+        if (colorPos == colorList.length - 1) colorPos = 0;
+        else colorPos += 1;
+        categoryList.push(categoryObj);
+        let catSelect = document.createElement("option");
+        catSelect.value = categoryObj.name;
+        categories.appendChild(catSelect);
+    } else categoryObj = categoryList[catMap.indexOf(task.taskCategory)];
     // Separate the DOM manipulation from the object creation logic
-    renderTask(task, category1);
+    renderTask(task, categoryObj);
 }
 // Function to display the item on the page
 function renderTask(task, cat) {
@@ -99,10 +104,10 @@ function renderTask(task, cat) {
     else if (task.priorityRating == "medium") taskPriority = medPriority;
     //Add innerHTML for the task category, but hide the element if there is a blank input
     //Use the category object to set a randomised label color for new categories, and use the same color for existing ones
-    let category2 = "<div ><span class='task-category' style='float:right; background-color:" + cat.labelColor + "'>" + cat.name + "</span>";
+    let categoryDiv = "<div ><span class='task-category' style='float:right; background-color:" + cat.labelColor + "'>" + cat.name + "</span>";
     //If the task div label color is light, change the text color to black for accessibility
-    if (cat.labelColor == "#00B8D9" || cat.labelColor == "#36B37E" || cat.labelColor == "#FFAB00") category2 = "<div ><span class='task-category' style='float:right; color: black; background-color:" + cat.labelColor + "'>" + cat.name + "</span>";
-    if (cat.name == "" || !cat.name) category2 = "<div ><span class='task-category' style='float:right; display:none'>" + task.taskCategory + "</span>";
+    if (cat.labelColor == "#00B8D9" || cat.labelColor == "#36B37E" || cat.labelColor == "#FFAB00") categoryDiv = "<div ><span class='task-category' style='float:right; color: black; background-color:" + cat.labelColor + "'>" + cat.name + "</span>";
+    if (cat.name == "" || !cat.name) categoryDiv = "<div ><span class='task-category' style='float:right; display:none'>" + task.taskCategory + "</span>";
     let title = "<h4>" + task.taskTitle + "</h4></div>";
     let desc = "<div><p>" + task.taskDescription + "</p></div>";
     //Add innerHTML for the task time, but hide the element if there is a blank input
@@ -110,7 +115,7 @@ function renderTask(task, cat) {
     if (!task.estimatedTime) time = "<div><h4 style='float:right; display:none;'>" + task.estimatedTime + " hrs</h4>";
     let priority1 = taskPriority + "</div>";
     //Append task metadata into the DOM
-    item.innerHTML = category2 + title + desc + time + priority1;
+    item.innerHTML = categoryDiv + title + desc + time + priority1;
     //Append task to array
     tasklist.appendChild(item);
 }
