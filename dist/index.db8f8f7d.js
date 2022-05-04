@@ -1,33 +1,36 @@
-/* draggable element */ function dragStart(e) {
+// dragStart event defines initial behavior on drag; hide original element and transfer data
+function dragStart(e) {
     e.dataTransfer.setData('text/plain', e.target.id);
     setTimeout(()=>{
         e.target.classList.add('hide');
     }, 0);
 }
-/* drop targets */ let columns = document.querySelectorAll('.kanban__column-items');
+// Define drop targets as all Kanban columns of type
+let columns = document.querySelectorAll('.kanban__column-items');
 columns.forEach((col)=>{
     col.addEventListener('dragenter', dragEnter);
     col.addEventListener('dragover', dragOver);
     col.addEventListener('dragleave', dragLeave);
-//col.addEventListener('drop', drop);
 });
+//Add highlight class to board when task is dragged over
 function dragEnter(e, el) {
     e.preventDefault();
-    el.parentElement.classList.add('drag-over');
-//e.target.classList.add('drag-over');
+    if (el) el.parentElement.classList.add('drag-over');
 }
+//Add highlight class to board when task is dragged over
 function dragOver(e, el) {
     e.preventDefault();
-    el.parentElement.classList.add('drag-over');
-//e.target.classList.add('drag-over');
+    if (el) el.parentElement.classList.add('drag-over');
 }
+//Remove highlight class from board when task is not being dragged over
 function dragLeave(e, el) {
-    el.parentElement.classList.remove('drag-over');
-//e.target.classList.remove('drag-over');
+    if (el) el.parentElement.classList.remove('drag-over');
 }
+//When task is placed, remove highlight class from board
+//And fetch the previously stored element data
+//Then append child to new board parent in DOM
 function drop(e, el) {
-    el.parentElement.classList.remove('drag-over');
-    //e.target.classList.remove('drag-over');
+    if (el) el.parentElement.classList.remove('drag-over');
     // get the draggable element
     const id = e.dataTransfer.getData('text/plain');
     const draggable = document.getElementById(id);
