@@ -10,6 +10,7 @@
     <title>Spiral.io</title>
     <link rel="shortcut icon" type=”image/svg+xml” href="images\spiral-logo.svg"/>
     <script src="scripts/script.js" defer></script>
+    <script src="scripts/pomodoro.js" defer></script>
 </head>
 <body>
 
@@ -23,19 +24,19 @@
     <div class="focus-wrapper">
         <div class="pomodoro-wrapper">
             <div class="pomodoro-session--buttons">
-                <button class="pomodoro-buttons" id="pomodoro-session-buttons--study"><p class="next-time">0:00pm</p>STUDY</button>
-                <button class="pomodoro-buttons" id="pomodoro-session-buttons--break"><p class="next-time">0:00pm</p>BREAK</button>
-                <button class="pomodoro-buttons" id="pomodoro-session-buttons--rest"><p class="next-time">0:00pm</p>REST</button>
+                <button class="pomodoro-buttons active" id="pomodoro-session-buttons--study" onclick="makeActiveSession(this)"><p class="next-time">0:00pm</p>STUDY</button>
+                <button class="pomodoro-buttons" id="pomodoro-session-buttons--break" onclick="makeActiveSession(this)"><p class="next-time">0:00pm</p>BREAK</button>
+                <button class="pomodoro-buttons" id="pomodoro-session-buttons--rest" onclick="makeActiveSession(this)"><p class="next-time">0:00pm</p>REST</button>
             </div>
             <div class="pomodoro-timer">
                 <div class="outer">
                     <div class="inner">
                         <div id="cycle-number">CYCLE 1</div>
-                        <div id="time-remaining">0:00</div>
+                        <div id="time-remaining">25:00</div>
                         <div id="timer-buttons">
-                            <button class="timer-button" id="back-icon"><object data="images/back-icon.svg"></object></button>
-                            <button class="timer-button" id="play-icon"><object data="images/play-icon.svg"></object></button>
-                            <button class="timer-button hidden" id="pause-icon"><object data="images/pause-icon.svg"></object></button>
+                            <button class="timer-button" id="back-icon"><object class="timer-svg" data="images/back-icon.svg"></object></button>
+                            <button class="timer-button" id="play-icon" onclick="togglePlayPause(this)"><object class="timer-svg" data="images/play-icon.svg"></object></button>
+                            <button class="timer-button hidden" id="pause-icon" onclick="togglePlayPause(this)"><object class="timer-svg" data="images/pause-icon.svg"></object></button>
                             <button class="timer-button" id="next-icon"><object data="images/next-icon.svg"></object></button>
                         </div>
                     </div>

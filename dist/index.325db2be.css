@@ -285,6 +285,7 @@ html {
 
 .focus-wrapper {
   aspect-ratio: 1 / 1;
+  min-height: 450px;
   margin-top: 75px;
   margin-left: 200px;
   padding: 0 28%;
@@ -298,7 +299,7 @@ html {
 
 .pomodoro-session--buttons {
   width: 100%;
-  height: 10%;
+  height: 15%;
   text-align: center;
   gap: 35px;
   margin-bottom: 30px;
@@ -315,7 +316,7 @@ html {
   font-size: 18px;
 }
 
-.pomodoro-buttons:focus {
+.active {
   color: #ebecf0;
   border-bottom: 2px solid #ebecf0;
 }
@@ -327,7 +328,7 @@ html {
   margin-bottom: 3px;
 }
 
-.pomodoro-buttons:focus .next-time {
+.active .next-time {
   display: none;
 }
 
@@ -335,8 +336,6 @@ html {
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  min-width: 400px;
-  min-height: 400px;
   padding: 20px;
 }
 
@@ -399,6 +398,10 @@ html {
 
 .hidden {
   display: none;
+}
+
+.timer-svg {
+  pointer-events: none;
 }
 
 @supports (font-variation-settings: normal) {

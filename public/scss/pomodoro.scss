@@ -11,6 +11,7 @@ html { font-family: 'Inter', sans-serif; }
   padding: 0px 28%;
   display: flex;
   aspect-ratio: 1/1;
+  min-height: 450px;
 }
 
 .pomodoro-wrapper {
@@ -22,7 +23,7 @@ html { font-family: 'Inter', sans-serif; }
 .pomodoro-session--buttons {
   gap: 35px;
   width: 100%;
-  height: 10%;
+  height: 15%;
   display: flex;
   text-align: center;
   margin-bottom: 30px;
@@ -38,7 +39,7 @@ html { font-family: 'Inter', sans-serif; }
   padding-bottom: 3px;
 }
 
-.pomodoro-buttons:focus {
+.active {
   color: variables.$textWhite;
   border-bottom: 2px solid variables.$textWhite;
 }
@@ -50,7 +51,7 @@ html { font-family: 'Inter', sans-serif; }
   opacity: 50%;
 }
 
-.pomodoro-buttons:focus .next-time {
+.active .next-time {
   display: none;
 }
 
@@ -59,8 +60,8 @@ html { font-family: 'Inter', sans-serif; }
   width: 100%;
   height: 100%;
   padding: 20px;
-  min-width: 400px;
-  min-height: 400px;
+  //min-width: 400px;
+  //min-height: 400px;
 }
 
 .outer {
@@ -122,4 +123,8 @@ html { font-family: 'Inter', sans-serif; }
 
 .hidden {
   display: none;
+}
+
+.timer-svg {
+  pointer-events: none;
 }
