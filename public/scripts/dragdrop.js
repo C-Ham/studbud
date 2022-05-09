@@ -6,15 +6,6 @@ function dragStart(e) {
     }, 0);
 }
 
-
-// Define drop targets as all Kanban columns of type
-let columns = document.querySelectorAll('.kanban__column-items');
-columns.forEach(col => {
-    col.addEventListener('dragenter', dragEnter)
-    col.addEventListener('dragover', dragOver);
-    col.addEventListener('dragleave', dragLeave);
-});
-
 //Add highlight class to board when task is dragged over
 function dragEnter(e, el) {
     e.preventDefault();
@@ -56,4 +47,5 @@ function drop(e, el) {
 
     // display the draggable element
     draggable.classList.remove('hide');
+    totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length - 1);
 }

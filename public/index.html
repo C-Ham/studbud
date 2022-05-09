@@ -13,6 +13,7 @@
     <script src="scripts/kanban.js" defer></script>
     <script src="scripts/modal.js" defer></script>
 </head>
+
 <body>
     <div id="modal" class="modal">
         <div class="modal-popup">
@@ -65,28 +66,25 @@
     <div class="sidenav">
         <h3 class="logo"><object class="logo-icon" data="images/spiral-logo.svg"></object>Spiral.io</h3>
         <a href="#" id="1" class="sidenav-link active" onclick="makeActive(this.id)"><object class="nav-icon" data="images/plan-icon.svg"></object>Plan</a>
-        <a href="# "id="2" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="images/focus-icon.svg"></object>Focus</a>
+        <a href="pomodoro.html "id="2" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="images/focus-icon.svg"></object>Focus</a>
         <a href="#" id="3" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="images/learn-icon.svg"></object>Learn</a>
     </div>
 
     <div class="kanban">
 
-        <div class="kanban__column">
-            <div class="kanban__column-title">TO-DO</div>
+        <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">TO-DO</div><div class="kanban__column-title--taskcount">0</div>
             <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
             <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)">
             </div>
         </div>
 
-        <div class="kanban__column">
-            <div class="kanban__column-title">IN PROGRESS</div>
+        <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">IN PROGRESS</div><div class="kanban__column-title--taskcount">0</div>
             <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
             <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)">
             </div>
         </div>
 
-        <div class="kanban__column">
-            <div class="kanban__column-title">DONE</div>
+        <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">DONE</div><div class="kanban__column-title--taskcount">0</div>
             <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
             <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)">
             </div>

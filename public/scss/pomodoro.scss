@@ -1,0 +1,125 @@
+@use 'variables';
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+.focus-wrapper {
+  margin-top: 75px;
+  margin-left: 200px;
+  padding: 0px 28%;
+  display: flex;
+  aspect-ratio: 1/1;
+}
+
+.pomodoro-wrapper {
+    flex: 1;
+    display: inline-block;
+    
+}
+
+.pomodoro-session--buttons {
+  gap: 35px;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pomodoro-buttons {
+  flex: 1;
+  font-family: Inter Medium;
+  font-size: 18px;
+  color: variables.$subtextGray;
+  background-color: transparent;
+  border: 0px solid;
+  padding-bottom: 3px;
+}
+
+.pomodoro-buttons:focus {
+  color: variables.$textWhite;
+  border-bottom: 2px solid variables.$textWhite;
+}
+
+.next-time {
+  margin-top: 0px;
+  margin-bottom: 3px;
+  color: variables.$subtextGray;
+  opacity: 50%;
+}
+
+.pomodoro-buttons:focus .next-time {
+  display: none;
+}
+
+.pomodoro-timer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  min-width: 400px;
+  min-height: 400px;
+}
+
+.outer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: variables.$modalGray;
+  padding: 7%;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: variables.$baseGray;
+}
+
+#cycle-number {
+  font-family: Inter Medium;
+  color: variables.$warningYellow;
+}
+
+#time-remaining {
+  display: block;
+  font-family: Inter Medium;
+  font-weight: 500;
+  color: variables.$textWhite;
+  font-size: 65px;
+}
+
+#timer-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-direction: row;
+}
+
+.timer-button {
+  background-color: transparent;
+  border: 0px solid;
+  width: 40px;
+  filter: variables.$iconGray;
+  opacity: 50%;
+}
+
+.timer-button:hover {
+  filter: none;
+}
+
+.timer-button:active {
+  filter: none;
+  opacity: 100%;
+}
+
+.hidden {
+  display: none;
+}

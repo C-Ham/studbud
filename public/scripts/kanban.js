@@ -1,6 +1,6 @@
 //Fetch parent element to insert tasks into
 const tasklist = document.getElementById("kanban__column-items");
-
+const totalTasks = document.querySelectorAll(".kanban__column-items");
 // Create an empty array to store tasks
 var taskList = [];
 
@@ -105,6 +105,8 @@ function renderTask(task, cat) {
 
   //Append task to array
   tasklist.appendChild(item);
+
+  totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length - 1);
 }
 
 //Some test tasks to make sure nothing breaks
@@ -112,3 +114,4 @@ addTask("2 Persona Slides", "Add user needs, requirements, and frustrations for 
 addTask("JavaScript Quiz", "Refresh concepts such as data structures, buffers and arrays", "medium", "INFO1001", "26/03/2021");
 addTask("Finalise Mockups", "Clean up layers, kern font families, prepare for presentation and finish off slide deck", "low", "", "", "");
 addTask("Virtual Reality Config", "Configure ARToolKit to prepare for mixed reality applications", "low", "INFO1001", "", 10);
+addTask("FAANG Interview Prep", "Do 3-5 practice problems daily for the next week, specifically datasets and binary trees", "medium", "Interviews", "", 20);

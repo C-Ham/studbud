@@ -20,6 +20,11 @@ html { font-family: 'Inter', sans-serif; }
     padding: 15px;
     flex: 1;
     margin-right:15px;
+    border: 1px solid #1d2a3e;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
 }
 
 .kanban__column-title {
@@ -27,6 +32,17 @@ html { font-family: 'Inter', sans-serif; }
     font-size: 14px;
     color: variables.$subtextGray;
     padding-bottom:5px;
+    display:inline;
+}
+
+.kanban__column-title--taskcount {
+    font-family: Inter SemiBold;
+    font-size: 14px;
+    color: variables.$subtextGray;
+    padding-bottom:5px;
+    padding-left:10px;
+    display:inline;
+    opacity: 50%;
 }
 
 .kanban__column-items {

@@ -1,0 +1,130 @@
+@import "https://rsms.me/inter/inter.css";
+html {
+  font-family: Inter, sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: Inter var, sans-serif;
+  }
+}
+
+.focus-wrapper {
+  aspect-ratio: 1 / 1;
+  margin-top: 75px;
+  margin-left: 200px;
+  padding: 0 28%;
+  display: flex;
+}
+
+.pomodoro-wrapper {
+  flex: 1;
+  display: inline-block;
+}
+
+.pomodoro-session--buttons {
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  gap: 35px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.pomodoro-buttons {
+  color: #808dad;
+  background-color: #0000;
+  border: 0 solid;
+  flex: 1;
+  padding-bottom: 3px;
+  font-family: Inter Medium;
+  font-size: 18px;
+}
+
+.pomodoro-buttons:focus {
+  color: #ebecf0;
+  border-bottom: 2px solid #ebecf0;
+}
+
+.next-time {
+  color: #808dad;
+  opacity: .5;
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+
+.pomodoro-buttons:focus .next-time {
+  display: none;
+}
+
+.pomodoro-timer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 400px;
+  min-height: 400px;
+  padding: 20px;
+}
+
+.outer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: #091e42;
+  border-radius: 50%;
+  padding: 7%;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  background-color: #031126;
+  border-radius: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#cycle-number {
+  color: #ffab00;
+  font-family: Inter Medium;
+}
+
+#time-remaining {
+  color: #ebecf0;
+  font-family: Inter Medium;
+  font-size: 65px;
+  font-weight: 500;
+  display: block;
+}
+
+#timer-buttons {
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.timer-button {
+  width: 40px;
+  filter: brightness(0) saturate() invert(62%) sepia(15%) saturate(591%) hue-rotate(185deg) brightness(86%) contrast(90%);
+  opacity: .5;
+  background-color: #0000;
+  border: 0 solid;
+}
+
+.timer-button:hover {
+  filter: none;
+}
+
+.timer-button:active {
+  filter: none;
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+/*# sourceMappingURL=pomodoro.2219f812.css.map */
