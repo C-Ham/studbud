@@ -24,15 +24,18 @@
     <div class="focus-wrapper">
         <div class="pomodoro-wrapper">
             <div class="pomodoro-session--buttons">
-                <button class="pomodoro-buttons active" id="pomodoro-session-buttons--study" onclick="makeActiveSession(this)"><p class="next-time">0:00pm</p>STUDY</button>
+                <button class="pomodoro-buttons active-state" id="pomodoro-session-buttons--study" onclick="makeActiveSession(this)"><p class="next-time">0:00pm</p>STUDY</button>
                 <button class="pomodoro-buttons" id="pomodoro-session-buttons--break" onclick="makeActiveSession(this)"><p class="next-time">0:00pm</p>BREAK</button>
                 <button class="pomodoro-buttons" id="pomodoro-session-buttons--rest" onclick="makeActiveSession(this)"><p class="next-time">0:00pm</p>REST</button>
             </div>
             <div class="pomodoro-timer">
                 <div class="outer">
+                    <svg>
+                        <circle id="progress-circle" cx="50%" cy="50%" r="45%"></circle>
+                    </svg>
                     <div class="inner">
                         <div id="cycle-number">CYCLE 1</div>
-                        <div id="time-remaining">25:00</div>
+                        <div id="time-remaining">0:00</div>
                         <div id="timer-buttons">
                             <button class="timer-button" id="back-icon"><object class="timer-svg" data="/back-icon.3d31021b.svg"></object></button>
                             <button class="timer-button" id="play-icon" onclick="togglePlayPause(this)"><object class="timer-svg" data="/play-icon.00a15770.svg"></object></button>
@@ -40,7 +43,9 @@
                             <button class="timer-button" id="next-icon"><object data="/next-icon.f76acf23.svg"></object></button>
                         </div>
                     </div>
+                    
                 </div>
+                
             </div>
         </div>
     </div>

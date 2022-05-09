@@ -39,7 +39,7 @@ html { font-family: 'Inter', sans-serif; }
   padding-bottom: 3px;
 }
 
-.active {
+.active-state {
   color: variables.$textWhite;
   border-bottom: 2px solid variables.$textWhite;
 }
@@ -51,7 +51,7 @@ html { font-family: 'Inter', sans-serif; }
   opacity: 50%;
 }
 
-.active .next-time {
+.active-state .next-time {
   display: none;
 }
 
@@ -71,6 +71,8 @@ html { font-family: 'Inter', sans-serif; }
   border-radius: 50%;
   background-color: variables.$modalGray;
   padding: 7%;
+  position: relative;
+  z-index: 0;
 }
 
 .inner {
@@ -82,6 +84,25 @@ html { font-family: 'Inter', sans-serif; }
   align-items: center;
   justify-content: center;
   background-color: variables.$baseGray;
+  z-index: 1;
+}
+
+circle {
+  fill: none;
+  stroke: cornflowerblue;
+  stroke-width: 40px;
+  stroke-dasharray: 1159;
+  stroke-dashoffset: 1159;
+  transition: stroke-dashoffset 1s linear;
+}
+
+svg {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 #cycle-number {
