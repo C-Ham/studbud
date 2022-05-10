@@ -286,6 +286,7 @@ html {
 .focus-wrapper {
   aspect-ratio: 1 / 1;
   min-height: 450px;
+  max-height: 450px;
   margin-top: 75px;
   margin-left: 200px;
   padding: 0 28%;
@@ -364,11 +365,16 @@ html {
 
 circle {
   fill: none;
-  stroke: #6495ed;
+  stroke: #6554c0;
   stroke-width: 40px;
   stroke-dasharray: 1159;
   stroke-dashoffset: 1159px;
   transition: stroke-dashoffset 1s linear;
+}
+
+.no-transition {
+  -o-transition: none !important;
+  transition: none !important;
 }
 
 svg {

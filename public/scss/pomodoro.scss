@@ -12,6 +12,7 @@ html { font-family: 'Inter', sans-serif; }
   display: flex;
   aspect-ratio: 1/1;
   min-height: 450px;
+  max-height: 450px;
 }
 
 .pomodoro-wrapper {
@@ -60,8 +61,6 @@ html { font-family: 'Inter', sans-serif; }
   width: 100%;
   height: 100%;
   padding: 20px;
-  //min-width: 400px;
-  //min-height: 400px;
 }
 
 .outer {
@@ -89,11 +88,18 @@ html { font-family: 'Inter', sans-serif; }
 
 circle {
   fill: none;
-  stroke: cornflowerblue;
+  stroke: variables.$helpPurple;
   stroke-width: 40px;
   stroke-dasharray: 1159;
   stroke-dashoffset: 1159;
   transition: stroke-dashoffset 1s linear;
+}
+
+.no-transition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
 
 svg {
