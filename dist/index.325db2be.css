@@ -427,7 +427,7 @@ svg {
   display: none;
 }
 
-.timer-svg {
+.timer-svg, .back-svg, .next-svg {
   pointer-events: none;
 }
 

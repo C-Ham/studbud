@@ -37,10 +37,10 @@
                         <div id="cycle-number">CYCLE 1</div>
                         <div id="time-remaining">0:00</div>
                         <div id="timer-buttons">
-                            <button class="timer-button" id="back-icon"><object class="timer-svg" data="images/back-icon.svg"></object></button>
+                            <button class="timer-button" id="back-icon" onclick="resetSession()"><object class="back-svg" data="images/back-icon.svg"></object></button>
                             <button class="timer-button" id="play-icon" onclick="togglePlayPause(this)"><object class="timer-svg" data="images/play-icon.svg"></object></button>
                             <button class="timer-button hidden" id="pause-icon" onclick="togglePlayPause(this)"><object class="timer-svg" data="images/pause-icon.svg"></object></button>
-                            <button class="timer-button" id="next-icon"><object data="images/next-icon.svg"></object></button>
+                            <button class="timer-button" id="next-icon" onclick="skipSession()"><object class="next-svg" data="images/next-icon.svg"></object></button>
                         </div>
                     </div>
                     
