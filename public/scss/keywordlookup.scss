@@ -1,0 +1,17 @@
+@use 'variables';
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+.keyword-lookup {
+    width: 200px;
+    height: 100%;
+    background-color: variables.$navGray;
+    padding-left: 1em;
+    padding-right: 1em;
+    position: fixed;
+    top: 0;
+    right: 0;
+}

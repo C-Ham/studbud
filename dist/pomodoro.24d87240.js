@@ -8,6 +8,10 @@ const nextBtn = document.getElementById("next-icon");
 const studyButton = document.getElementById("pomodoro-session-buttons--study");
 const restButton = document.getElementById("pomodoro-session-buttons--rest");
 const breakButton = document.getElementById("pomodoro-session-buttons--break");
+//Fetch elements to calculcate times for next session
+const nextBreakText = document.getElementById("next-break");
+const nextStudyText = document.getElementById("next-study");
+const nextRestText = document.getElementById("next-rest");
 const cycleNumber = document.getElementById("cycle-number");
 //Fetch time remaining to update every second
 const countdownTimer = document.getElementById("time-remaining");
@@ -28,12 +32,13 @@ var completedStudySessions = -1;
 //Define variable to set interval for the timer countdown function
 var timerStart;
 //Triggered when a new session type is started, either from completion or a button onclick event
-function makeActiveSession(session) {
+//Specify the session type and whether it counts as a completed session 
+function makeActiveSession(session, complete = true) {
     var sessionList = document.getElementsByClassName("pomodoro-buttons");
     for (let item of sessionList)item.classList.remove("active-state");
     session.classList.add("active-state");
     togglePlayPause(pauseBtn);
-    sessionComplete();
+    if (complete) sessionComplete();
     if (session == restButton) {
         currentSession = "rest";
         renderTime(Math.floor(restTime / 60), restTime % 60);
@@ -47,6 +52,7 @@ function makeActiveSession(session) {
         renderTime(Math.floor(studyTime / 60), studyTime % 60);
         progressCircle.style.stroke = "#6554C0";
     }
+    console.log(completedStudySessions);
 }
 //Start and stop the timer on play/pause onclick event
 function togglePlayPause(btn) {
@@ -166,10 +172,40 @@ function updateCountdown(currentSession1) {
 }
 //Render user-readable time format in DOM from calculated minutes and seconds
 function renderTime(minutes, seconds) {
+    //Update countdown timer given minutes and seconds parameters
     seconds = seconds < 10 ? '0' + seconds : seconds;
     countdownTimer.innerHTML = minutes + ":" + seconds;
+    //Calculate the time for the next break
+    var nextBreak = moment().add(minutes, 'm').add(seconds, 's');
+    if (currentSession == "rest") nextBreak = nextBreak.add(studyMinutes, 'm');
+    nextBreakText.innerHTML = nextBreak.format('hh:mm a');
+    //Calculate the time for the next study session
+    var nextStudy = moment().add(minutes, 'm').add(seconds, 's');
+    nextStudyText.innerHTML = nextStudy.format('hh:mm a');
 }
-//Calculate what percent of session is complete, given the current time remaining
+/*
+completed study sessions = 0
+start of study 1 -> 115
+    (25 * 3) + (5 * 3)    +   (17:49)
+
+completed study sessions = 1
+start of break 1 -> 90
+    (25 * 3) + (5 * 2)    +   (1:23)
+start of study 2 -> 85
+    (25 * 2) + (5 * 2)    +   (17:49)
+
+completed study sessions = 2
+start of break 2 -> 60
+    (25 * 2) + (5 * 1)    +   (1:23)
+start of study 3 -> 55
+    (25 * 1) + (5 * 1)    +   (17:49)
+
+completed study sessions = 3   
+start of break 3 -> 30
+    (25 * 1) + (5 * 0)    +   (1:23)
+start of study 4 --> 25
+    (25 * 0) + (5 * 0)    +   (17:49)
+*/ //Calculate what percent of session is complete, given the current time remaining
 function timeToPercent(currentSession2) {
     switch(currentSession2){
         case "break":

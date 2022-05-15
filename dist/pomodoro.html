@@ -10,6 +10,7 @@
     <title>Spiral.io</title>
     <link rel="shortcut icon" type="”image/svg+xml”" href="/spiral-logo.73249af3.svg">
     <script src="/index.4cd70b43.js" defer=""></script>
+    <script src="/pomodoro.3b615548.js" defer=""></script>
     <script src="/pomodoro.24d87240.js" defer=""></script>
 </head>
 <body>
@@ -21,12 +22,13 @@
         <a href="#" id="3" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="/learn-icon.7d83518e.svg"></object>Learn</a>
     </div>
 
+    
     <div class="focus-wrapper">
         <div class="pomodoro-wrapper">
             <div class="pomodoro-session--buttons">
-                <button class="pomodoro-buttons" id="pomodoro-session-buttons--study" onclick="makeActiveSession(this)"><p class="next-time">0:00pm</p>STUDY</button>
-                <button class="pomodoro-buttons" id="pomodoro-session-buttons--break" onclick="makeActiveSession(this)"><p class="next-time">0:00pm</p>BREAK</button>
-                <button class="pomodoro-buttons" id="pomodoro-session-buttons--rest" onclick="makeActiveSession(this)"><p class="next-time">0:00pm</p>REST</button>
+                <button class="pomodoro-buttons" id="pomodoro-session-buttons--study" onclick="makeActiveSession(this, false)"><p id="next-study" class="next-time">0:00pm</p>STUDY</button>
+                <button class="pomodoro-buttons" id="pomodoro-session-buttons--break" onclick="makeActiveSession(this, false)"><p id="next-break" class="next-time">0:00pm</p>BREAK</button>
+                <button class="pomodoro-buttons" id="pomodoro-session-buttons--rest" onclick="makeActiveSession(this, false)"><p id="next-rest" class="next-time">0:00pm</p>REST</button>
             </div>
             <div class="pomodoro-timer">
                 <div class="outer">
