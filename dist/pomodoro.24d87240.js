@@ -52,7 +52,6 @@ function makeActiveSession(session, complete = true) {
         renderTime(Math.floor(studyTime / 60), studyTime % 60);
         progressCircle.style.stroke = "#6554C0";
     }
-    console.log(completedStudySessions);
 }
 //Start and stop the timer on play/pause onclick event
 function togglePlayPause(btn) {

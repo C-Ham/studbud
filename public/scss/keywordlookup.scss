@@ -6,12 +6,75 @@ html { font-family: 'Inter', sans-serif; }
 }
 
 .keyword-lookup {
-    width: 200px;
+    position: fixed;
+    width: 230px;
     height: 100%;
+    padding: 20px 13px;
     background-color: variables.$navGray;
-    padding-left: 1em;
-    padding-right: 1em;
     position: fixed;
     top: 0;
     right: 0;
+}
+
+.collapsed {
+    width: 30px;
+}
+
+#collapse-btn {
+    cursor: pointer;
+    width: 25px;
+    font-size: 40px;
+    font-weight: 200;
+    height: 100%;
+    color: variables.$subtextGray;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar-heading {
+    color: variables.$subtextGray;
+    margin: 0px;
+    margin-bottom: 3px;
+    font-size: 12px;
+}
+
+#search-bar {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding: 7px 15px;
+}
+
+.keyword-result {
+    background-color: variables.$modalGray;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0px;
+}
+
+.keyword-result--title {
+    font-size: 13px;
+    margin: 0px;
+}
+
+.keyword-result--desc {
+    margin: 2px 0px;
+    font-size: 12px;
+}
+
+.search-bar-div {
+    position: relative;
+}
+
+.search-bar input {
+    padding-left: 20px;
+}
+
+.search-bar-div img {
+    position: absolute;
+    right: 0;
+    padding: 0px 10px;
+    pointer-events: none;
+    top: 1rem;
 }

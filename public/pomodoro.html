@@ -12,6 +12,7 @@
     <script src="scripts/script.js" defer></script>
     <script src="scripts/moment.js" defer></script>
     <script src="scripts/pomodoro.js" defer></script>
+    <script src="scripts/keywordlookup.js" type="module" defer></script>
 </head>
 <body>
 
@@ -21,8 +22,6 @@
         <a href="# "id="2" class="sidenav-link active" onclick="makeActive(this.id)"><object class="nav-icon" data="images/focus-icon.svg"></object>Focus</a>
         <a href="#" id="3" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="images/learn-icon.svg"></object>Learn</a>
     </div>
-
-    
     <div class="focus-wrapper">
         <div class="pomodoro-wrapper">
             <div class="pomodoro-session--buttons">
@@ -50,5 +49,14 @@
                 
             </div>
         </div>
+    </div>
+    <div id="keyword-lookup" class="keyword-lookup">
+        <!--<div id="collapse-btn" onclick="collapseToggle()">&#8249;</div>-->
+        <h5 class="searchbar-heading">KEYWORD LOOKUP</h5>
+        <div class="search-bar-div"> <input id="search-field" style="padding-right:35px;" type="text"/> <img role="img" style="width:16px;" src="images\search-icon.svg" /></div>
+        <h5 class="searchbar-heading">TOP RESULTS</h5>
+        <div class="keyword-result"><h4 class="keyword-result--title">String()</h4><p class="keyword-result--desc">This is a string</p></div>
+        <div class="keyword-result"><h4 class="keyword-result--title">String()</h4><p class="keyword-result--desc">This is a string</p></div>
+        <div class="keyword-result"><h4 class="keyword-result--title">String()</h4><p class="keyword-result--desc">This is a string</p></div>
     </div>
 </body>

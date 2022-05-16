@@ -288,7 +288,6 @@ html {
   min-height: 450px;
   max-height: 450px;
   margin-top: 75px;
-  margin-left: 200px;
   padding: 0 28%;
   display: flex;
 }
@@ -442,13 +441,74 @@ html {
 }
 
 .keyword-lookup {
-  width: 200px;
+  width: 230px;
   height: 100%;
   background-color: #021530;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 20px 13px;
   position: fixed;
   top: 0;
+  right: 0;
+}
+
+.collapsed {
+  width: 30px;
+}
+
+#collapse-btn {
+  cursor: pointer;
+  width: 25px;
+  height: 100%;
+  color: #808dad;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 200;
+  display: flex;
+}
+
+.searchbar-heading {
+  color: #808dad;
+  margin: 0 0 3px;
+  font-size: 12px;
+}
+
+#search-bar {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 7px 15px;
+}
+
+.keyword-result {
+  background-color: #091e42;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.keyword-result--title {
+  margin: 0;
+  font-size: 13px;
+}
+
+.keyword-result--desc {
+  margin: 2px 0;
+  font-size: 12px;
+}
+
+.search-bar-div {
+  position: relative;
+}
+
+.search-bar input {
+  padding-left: 20px;
+}
+
+.search-bar-div img {
+  pointer-events: none;
+  padding: 0 10px;
+  position: absolute;
+  top: 1rem;
   right: 0;
 }
 
