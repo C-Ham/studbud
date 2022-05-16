@@ -2,23 +2,33 @@ const collapseButton = document.getElementById("collapse-btn");
 const keywordLookup = document.getElementById("keyword-lookup");
 const searchField = document.getElementById("search-field");
 
-fetch('https://api.dictionaryapi.dev/api/v2/entries/en/smile')
-  .then(response => response.json())
-  .then(data => 
-    data[0].meanings.forEach(
-        function(meaning) {
-            //console.log(meaning); 
-            meaning.definitions.forEach(
-                function(def) { 
-                    console.log(def.definition); 
-                    let defWrapper = document.createElement("div");
-                    defWrapper.classList.add('keyword-result');
-                    let defTitle = "<h4 class='keyword-result--title'>String()</h4>";
-                    let defDesc = "<p class='keyword-result--desc'>" + def.definition + "</p>";
-                    defWrapper.innerHTML = defTitle + defDesc;
-                })
-            }
-        ));
+searchField.addEventListener("keypress", function(event) {
+    if(event.key == "Enter") {
+        event.preventDefault();
+        console.log(searchField.value);
+        const existingDefs = document.querySelectorAll('.keyword-result');
+        existingDefs.forEach(def => def.remove());
+
+        fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchField.value}`)
+        .then(response => response.json())
+        .then(data => 
+            data[0].meanings.forEach(
+                function(meaning) {
+                    meaning.definitions.forEach(
+                        function(def) {  
+                            let defWrapper = document.createElement("div");
+                            defWrapper.classList.add('keyword-result');
+                            let defTitle = "<h4 class='keyword-result--title'><i>" + meaning.partOfSpeech + "</i></h4>";
+                            let defDesc = "<p class='keyword-result--desc'>" + def.definition + "</p>";
+                            defWrapper.innerHTML = defTitle + defDesc;
+                            keywordLookup.appendChild(defWrapper);
+                        })
+                    }
+                ));
+    }
+})
+
+
     
 function collapseToggle() {
     if (collapseButton.parentElement.classList.contains("collapsed")) {

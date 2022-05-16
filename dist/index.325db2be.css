@@ -442,12 +442,13 @@ html {
 
 .keyword-lookup {
   width: 230px;
-  height: 100%;
+  height: calc(100% - 40px);
   background-color: #021530;
   padding: 20px 13px;
   position: fixed;
   top: 0;
   right: 0;
+  overflow-y: scroll;
 }
 
 .collapsed {
@@ -487,13 +488,16 @@ html {
 }
 
 .keyword-result--title {
-  margin: 0;
-  font-size: 13px;
+  color: #808dad;
+  margin: 0 0 3px;
+  font-size: 12px;
+  font-weight: 300;
 }
 
 .keyword-result--desc {
+  color: #ebecf0;
   margin: 2px 0;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .search-bar-div {
@@ -505,11 +509,18 @@ html {
 }
 
 .search-bar-div img {
+  cursor: pointer;
+  z-index: 1;
+  width: 16px;
   pointer-events: none;
   padding: 0 10px;
   position: absolute;
   top: 1rem;
   right: 0;
+}
+
+#search-field {
+  padding-right: 35px;
 }
 
 @supports (font-variation-settings: normal) {
