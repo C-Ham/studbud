@@ -55,9 +55,7 @@ function makeActiveSession(session, complete=true) {
 
     togglePlayPause(pauseBtn);
 
-    if (complete) {
-        sessionComplete();
-    }
+    sessionComplete();
 
     if (session == restButton) {
         currentSession = "rest";
@@ -243,19 +241,16 @@ function renderTime(minutes, seconds) {
 completed study sessions = 0
 start of study 1 -> 115
     (25 * 3) + (5 * 3)    +   (17:49)
-
 completed study sessions = 1
 start of break 1 -> 90
     (25 * 3) + (5 * 2)    +   (1:23)
 start of study 2 -> 85
     (25 * 2) + (5 * 2)    +   (17:49)
-
 completed study sessions = 2
 start of break 2 -> 60
     (25 * 2) + (5 * 1)    +   (1:23)
 start of study 3 -> 55
     (25 * 1) + (5 * 1)    +   (17:49)
-
 completed study sessions = 3   
 start of break 3 -> 30
     (25 * 1) + (5 * 0)    +   (1:23)
