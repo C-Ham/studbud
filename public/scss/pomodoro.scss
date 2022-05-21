@@ -42,6 +42,9 @@ html { font-family: 'Inter', sans-serif; }
 .active-state {
   color: variables.$textWhite;
   border-bottom: 2px solid variables.$textWhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .next-time {
@@ -110,6 +113,11 @@ svg {
   z-index: -1;
 }
 
+#session-number {
+  font-family: Inter Medium;
+  color: variables.$helpPurple;
+}
+
 #cycle-number {
   font-family: Inter Medium;
   color: variables.$warningYellow;
@@ -153,4 +161,10 @@ svg {
 
 .timer-svg, .back-svg, .next-svg {
   pointer-events: none;
+}
+
+.settings-icon {
+  width: 20px;
+  margin-right: 15px;
+  display: none;
 }

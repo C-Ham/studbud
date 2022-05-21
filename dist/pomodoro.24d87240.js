@@ -12,11 +12,14 @@ const breakButton = document.getElementById("pomodoro-session-buttons--break");
 const nextBreakText = document.getElementById("next-break");
 const nextStudyText = document.getElementById("next-study");
 const nextRestText = document.getElementById("next-rest");
+const settingsIcon = document.querySelectorAll("settings-icon");
 const cycleNumber = document.getElementById("cycle-number");
+const sessionNumber = document.getElementById("session-number");
 //Fetch time remaining to update every second
 const countdownTimer = document.getElementById("time-remaining");
 //Fetch progress circle to update current time progressed every second
 const progressCircle = document.getElementById("progress-circle");
+//const settingsIcon = "<object class='settings-icon' data='images/settings-icon.svg'></object>";
 //Define study, break, and rest times for each session, with default values
 const studyMinutes = 25;
 let studyTime = studyMinutes * 60;
@@ -35,8 +38,12 @@ var timerStart;
 //Specify the session type and whether it counts as a completed session 
 function makeActiveSession(session, complete = true) {
     var sessionList = document.getElementsByClassName("pomodoro-buttons");
-    for (let item of sessionList)item.classList.remove("active-state");
+    for (let item of sessionList){
+        item.classList.remove("active-state");
+        item.firstChild.style = "display: none;";
+    }
     session.classList.add("active-state");
+    session.firstChild.style = "display: flex;";
     togglePlayPause(pauseBtn);
     sessionComplete();
     if (session == restButton) {
@@ -108,6 +115,8 @@ function sessionComplete() {
     playBtn.classList.remove("hidden");
     if (currentSession == "study") completedStudySessions++;
     resetTimer();
+    if (completedStudySessions == 4) completedStudySessions = 0;
+    sessionNumber.innerHTML = "#" + (completedStudySessions + 1);
 }
 //Reset the progress circle to 0%, and render the time back to the original session time
 function resetTimer() {

@@ -521,7 +521,6 @@ const synonymList = document.getElementById("synonym-list");
 searchField.addEventListener("keypress", function(event) {
     if (event.key == "Enter") {
         event.preventDefault();
-        console.log(searchField.value);
         const existingDefs = document.querySelectorAll('.keyword-result');
         existingDefs.forEach((def)=>def.remove()
         );

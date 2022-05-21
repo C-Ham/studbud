@@ -319,6 +319,9 @@ html {
 .active-state {
   color: #ebecf0;
   border-bottom: 2px solid #ebecf0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .next-time {
@@ -385,6 +388,11 @@ svg {
   left: 0;
 }
 
+#session-number {
+  color: #6554c0;
+  font-family: Inter Medium;
+}
+
 #cycle-number {
   color: #ffab00;
   font-family: Inter Medium;
@@ -430,6 +438,12 @@ svg {
   pointer-events: none;
 }
 
+.settings-icon {
+  width: 20px;
+  margin-right: 15px;
+  display: none;
+}
+
 html {
   font-family: Inter, sans-serif;
 }
@@ -444,7 +458,7 @@ html {
   width: 230px;
   height: calc(100% - 40px);
   background-color: #021530;
-  padding: 20px 13px;
+  padding: 20px 15px;
   position: fixed;
   top: 0;
   right: 0;
