@@ -12,20 +12,18 @@ const breakButton = document.getElementById("pomodoro-session-buttons--break");
 const nextBreakText = document.getElementById("next-break");
 const nextStudyText = document.getElementById("next-study");
 const nextRestText = document.getElementById("next-rest");
-const settingsIcon = document.querySelectorAll("settings-icon");
 const cycleNumber = document.getElementById("cycle-number");
 const sessionNumber = document.getElementById("session-number");
 //Fetch time remaining to update every second
 const countdownTimer = document.getElementById("time-remaining");
 //Fetch progress circle to update current time progressed every second
 const progressCircle = document.getElementById("progress-circle");
-//const settingsIcon = "<object class='settings-icon' data='images/settings-icon.svg'></object>";
 //Define study, break, and rest times for each session, with default values
-const studyMinutes = 25;
+let studyMinutes = 25;
 let studyTime = studyMinutes * 60;
-const breakMinutes = 5;
+let breakMinutes = 5;
 let breakTime = breakMinutes * 60;
-const restMinutes = 15;
+let restMinutes = 15;
 let restTime = restMinutes * 60;
 //Set the current session name and the cycle number
 var currentSession = "study";
@@ -36,28 +34,31 @@ var completedStudySessions = -1;
 var timerStart;
 //Triggered when a new session type is started, either from completion or a button onclick event
 //Specify the session type and whether it counts as a completed session 
-function makeActiveSession(session, complete = true) {
+function makeActiveSession(session) {
     var sessionList = document.getElementsByClassName("pomodoro-buttons");
-    for (let item of sessionList){
-        item.classList.remove("active-state");
-        item.firstChild.style = "display: none;";
-    }
-    session.classList.add("active-state");
-    session.firstChild.style = "display: flex;";
-    togglePlayPause(pauseBtn);
-    sessionComplete();
-    if (session == restButton) {
-        currentSession = "rest";
-        renderTime(Math.floor(restTime / 60), restTime % 60);
-        progressCircle.style.stroke = "#00B8D9";
-    } else if (session == breakButton) {
-        currentSession = "break";
-        renderTime(Math.floor(breakTime / 60), breakTime % 60);
-        progressCircle.style.stroke = "#FFAB00";
-    } else {
-        currentSession = "study";
-        renderTime(Math.floor(studyTime / 60), studyTime % 60);
-        progressCircle.style.stroke = "#6554C0";
+    if (session.classList.contains("active-state")) openTimesModal();
+    else {
+        for (let item of sessionList){
+            item.classList.remove("active-state");
+            item.firstChild.style = "display: none;";
+        }
+        session.classList.add("active-state");
+        session.firstChild.style = "display: flex;";
+        togglePlayPause(pauseBtn);
+        sessionComplete();
+        if (session == restButton) {
+            currentSession = "rest";
+            renderTime(Math.floor(restTime / 60), restTime % 60);
+            progressCircle.style.stroke = "#00B8D9";
+        } else if (session == breakButton) {
+            currentSession = "break";
+            renderTime(Math.floor(breakTime / 60), breakTime % 60);
+            progressCircle.style.stroke = "#FFAB00";
+        } else {
+            currentSession = "study";
+            renderTime(Math.floor(studyTime / 60), studyTime % 60);
+            progressCircle.style.stroke = "#6554C0";
+        }
     }
 }
 //Start and stop the timer on play/pause onclick event
@@ -191,26 +192,7 @@ function renderTime(minutes, seconds) {
     var nextStudy = moment().add(minutes, 'm').add(seconds, 's');
     nextStudyText.innerHTML = nextStudy.format('hh:mm a');
 }
-/*
-completed study sessions = 0
-start of study 1 -> 115
-    (25 * 3) + (5 * 3)    +   (17:49)
-completed study sessions = 1
-start of break 1 -> 90
-    (25 * 3) + (5 * 2)    +   (1:23)
-start of study 2 -> 85
-    (25 * 2) + (5 * 2)    +   (17:49)
-completed study sessions = 2
-start of break 2 -> 60
-    (25 * 2) + (5 * 1)    +   (1:23)
-start of study 3 -> 55
-    (25 * 1) + (5 * 1)    +   (17:49)
-completed study sessions = 3   
-start of break 3 -> 30
-    (25 * 1) + (5 * 0)    +   (1:23)
-start of study 4 --> 25
-    (25 * 0) + (5 * 0)    +   (17:49)
-*/ //Calculate what percent of session is complete, given the current time remaining
+//Calculate what percent of session is complete, given the current time remaining
 function timeToPercent(currentSession2) {
     switch(currentSession2){
         case "break":

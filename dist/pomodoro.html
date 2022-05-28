@@ -13,8 +13,37 @@
     <script src="/pomodoro.3b615548.js" defer=""></script>
     <script src="/pomodoro.24d87240.js" defer=""></script>
     <script src="/pomodoro.7ce6b374.js" defer=""></script>
+    <script src="/pomodoro.e352eeea.js" defer=""></script>
 </head>
 <body>
+    <div id="modal-times" class="modal-times">
+        <div class="modal-times--popup">
+            <h2>Change Session Times</h2>
+            <form id="change-times">
+                <div id="form-wrapper">
+                    <div class="input-wrapper">
+                        <label for="pomodoro">POMODORO TIME</label><br>
+                        <input type="number" id="pomodoro" name="pomodoro" placeholder="25" min="1" max="60"><br>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="break">BREAK TIME</label><br>
+                        <input type="number" id="break" name="break" placeholder="5" min="1" max="60"><br>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="rest">REST TIME</label><br>
+                        <input type="number" id="rest" name="rest" placeholder="15" min="1" max="60"><br>
+                    </div>
+                </div>
+
+                <div class="button-wrapper">
+                    <button class="cancel-btn" type="button" onclick="closeTimesModal()">CANCEL</button>
+                    <button type="button" class="primary-btn" onclick="onTimesSubmit()">APPLY</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <div class="sidenav">
         <h3 class="logo"><object class="logo-icon" data="/spiral-logo.73249af3.svg"></object>Spiral.io</h3>
@@ -25,9 +54,9 @@
     <div class="focus-wrapper">
         <div class="pomodoro-wrapper">
             <div class="pomodoro-session--buttons">
-                <button class="pomodoro-buttons" id="pomodoro-session-buttons--study" onclick="makeActiveSession(this, false)"><object class="settings-icon" data="/settings-icon.b07a969d.svg"></object><p id="next-study" class="next-time">0:00pm</p>STUDY</button>
-                <button class="pomodoro-buttons" id="pomodoro-session-buttons--break" onclick="makeActiveSession(this, false)"><object class="settings-icon" data="/settings-icon.b07a969d.svg"></object><p id="next-break" class="next-time">0:00pm</p>BREAK</button>
-                <button class="pomodoro-buttons" id="pomodoro-session-buttons--rest" onclick="makeActiveSession(this, false)"><object class="settings-icon" data="/settings-icon.b07a969d.svg"></object><p id="next-rest" class="next-time">0:00pm</p>REST</button>
+                <button class="pomodoro-buttons" id="pomodoro-session-buttons--study" onclick="makeActiveSession(this)"><object class="settings-icon" data="/settings-icon.b07a969d.svg"></object><p id="next-study" class="next-time">0:00pm</p>STUDY</button>
+                <button class="pomodoro-buttons" id="pomodoro-session-buttons--break" onclick="makeActiveSession(this)"><object class="settings-icon" data="/settings-icon.b07a969d.svg"></object><p id="next-break" class="next-time">0:00pm</p>BREAK</button>
+                <button class="pomodoro-buttons" id="pomodoro-session-buttons--rest" onclick="makeActiveSession(this)"><object class="settings-icon" data="/settings-icon.b07a969d.svg"></object><p id="next-rest" class="next-time">0:00pm</p>REST</button>
             </div>
             <div class="pomodoro-timer">
                 <div class="outer">

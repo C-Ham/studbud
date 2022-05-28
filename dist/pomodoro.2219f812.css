@@ -33,6 +33,7 @@ html {
 }
 
 .pomodoro-buttons {
+  cursor: pointer;
   color: #808dad;
   background-color: #0000;
   border: 0 solid;
@@ -44,6 +45,7 @@ html {
 
 .active-state {
   color: #ebecf0;
+  cursor: default;
   border-bottom: 2px solid #ebecf0;
   justify-content: center;
   align-items: center;
@@ -166,6 +168,8 @@ svg {
 
 .settings-icon {
   width: 20px;
+  pointer-events: none;
+  cursor: pointer;
   margin-right: 15px;
   display: none;
 }

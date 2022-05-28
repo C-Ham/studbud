@@ -307,6 +307,7 @@ html {
 }
 
 .pomodoro-buttons {
+  cursor: pointer;
   color: #808dad;
   background-color: #0000;
   border: 0 solid;
@@ -318,6 +319,7 @@ html {
 
 .active-state {
   color: #ebecf0;
+  cursor: default;
   border-bottom: 2px solid #ebecf0;
   justify-content: center;
   align-items: center;
@@ -440,6 +442,8 @@ svg {
 
 .settings-icon {
   width: 20px;
+  pointer-events: none;
+  cursor: pointer;
   margin-right: 15px;
   display: none;
 }
@@ -535,6 +539,123 @@ html {
 
 #search-field {
   padding-right: 35px;
+}
+
+html {
+  font-family: Inter, sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: Inter var, sans-serif;
+  }
+}
+
+h2 {
+  color: #808dad;
+  margin-bottom: 40px;
+  font-family: Inter Medium;
+  font-size: 18px;
+}
+
+#form-wrapper {
+  gap: 30px;
+  display: flex;
+}
+
+.input-wrapper {
+  flex: 1;
+}
+
+.modal-times {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-color: #000610d9;
+  animation: fadeInAnimation .2s forwards;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.modal-times--popup {
+  box-sizing: border-box;
+  width: 60%;
+  color: #fff;
+  background-color: #021530;
+  border-radius: 5px;
+  margin: 15% auto;
+  padding: 40px 100px;
+}
+
+::placeholder {
+  color: #808dad;
+  font-family: Inter;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  color: #ebecf0;
+  color-scheme: dark;
+  background-color: #091e42;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  font-family: Inter;
+}
+
+.modal-times--popup, .dropdown-list, .dropdown-wrapper > label {
+  color: #ebecf0;
+  padding-bottom: 5px;
+  font-family: Inter SemiBold;
+  font-size: 13px;
+}
+
+input:focus, select:focus, textarea:focus {
+  background-color: #0b2550;
+  outline: none;
+}
+
+.cancel-btn {
+  color: #808dad;
+  background-color: #0000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: Inter Medium;
+  font-size: 14px;
+}
+
+.primary-btn {
+  float: right;
+  color: #ebecf0;
+  width: auto;
+  background-color: #6554c0;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: Inter Medium;
+  font-size: 14px;
+}
+
+.cancel-btn:hover {
+  cursor: pointer;
+  background-color: #091e42;
+}
+
+.primary-btn:hover {
+  cursor: pointer;
+  background-color: #7261d5;
+}
+
+.button-wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 @supports (font-variation-settings: normal) {

@@ -20,7 +20,6 @@ function onSubmit() {
   if(!taskTitle.value && !taskDesc.value) {
     taskTitle.style.border = "2px solid #FF5630";
     taskDesc.style.border = "2px solid #FF5630";
-
   }
 
   //Title missing

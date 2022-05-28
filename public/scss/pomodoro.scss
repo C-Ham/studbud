@@ -30,6 +30,7 @@ html { font-family: 'Inter', sans-serif; }
 }
 
 .pomodoro-buttons {
+  cursor: pointer;
   flex: 1;
   font-family: Inter Medium;
   font-size: 18px;
@@ -45,6 +46,7 @@ html { font-family: 'Inter', sans-serif; }
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: default;
 }
 
 .next-time {
@@ -165,6 +167,8 @@ svg {
 
 .settings-icon {
   width: 20px;
+  pointer-events: none;
+  cursor: pointer;
   margin-right: 15px;
   display: none;
 }

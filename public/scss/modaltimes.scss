@@ -1,0 +1,127 @@
+@use 'variables';
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+h2 {
+    font-family: Inter Medium;
+    font-size: 18px;
+    color: variables.$subtextGray;
+    margin-bottom: 40px;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+#form-wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.input-wrapper {
+    flex: 1;
+}
+
+.modal-times {
+    animation: fadeInAnimation ease 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 6, 16, 0.85);
+}
+
+.modal-times--popup {
+    box-sizing: border-box;
+    margin: 15% auto;
+    width: 60%;
+    padding: 40px 100px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: variables.$navGray;
+}
+
+::placeholder {
+    font-family: Inter;
+    color: variables.$subtextGray;
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: variables.$modalGray;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-family: Inter;
+    color: variables.$textWhite;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    color-scheme: dark;
+}
+
+.modal-times--popup, .dropdown-list, .dropdown-wrapper > label  {
+    font-family: Inter SemiBold;
+    font-size: 13px;
+    color: variables.$textWhite;
+    padding-bottom:5px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    background-color: #0b2550;
+}
+
+.cancel-btn {
+    font-family: Inter Medium;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    color: variables.$subtextGray;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
+
+.primary-btn {
+    float: right;
+    font-family: Inter Medium;
+    font-size: 14px;
+    background-color: variables.$helpPurple;
+    border: none;
+    color: variables.$textWhite;
+    padding: 10px 25px;
+    border-radius: 5px;
+    width: auto;
+}
+
+.cancel-btn:hover {
+    cursor: pointer;
+    background-color: variables.$modalGray;
+}
+
+.primary-btn:hover {
+    cursor: pointer;
+    background-color: #7261d5;
+}
+
+.button-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
