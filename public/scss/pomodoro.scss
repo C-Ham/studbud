@@ -172,3 +172,37 @@ svg {
   margin-right: 15px;
   display: none;
 }
+
+#content-wrapper {
+  position: absolute;
+  bottom: 0px;
+  margin-left: -16px;
+  padding: 5px;
+}
+
+#stopwatch-text {
+  color: variables.$textWhite;
+  font-size: 22px;
+  font-family: Inter ExtraLight;
+  flex: 1;
+  margin: 0px;
+  text-align: left;
+}
+
+#icon-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+#stopwatch-wrapper {
+  display: flex;
+  flex-direction: row;
+  background-color: variables.$modalGray;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  gap: 15px;
+  position: absolute;
+  bottom: 115px;
+}

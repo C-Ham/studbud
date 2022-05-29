@@ -174,4 +174,38 @@ svg {
   display: none;
 }
 
+#content-wrapper {
+  margin-left: -16px;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+}
+
+#stopwatch-text {
+  color: #ebecf0;
+  text-align: left;
+  flex: 1;
+  margin: 0;
+  font-family: Inter ExtraLight;
+  font-size: 22px;
+}
+
+#icon-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+#stopwatch-wrapper {
+  text-align: center;
+  cursor: pointer;
+  background-color: #091e42;
+  border-radius: 5px;
+  flex-direction: row;
+  gap: 15px;
+  padding: 15px 20px;
+  display: flex;
+  position: absolute;
+  bottom: 115px;
+}
+
 /*# sourceMappingURL=pomodoro.2219f812.css.map */

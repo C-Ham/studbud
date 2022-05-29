@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="/index.325db2be.css">
     <link rel="stylesheet" href="/pomodoro.2219f812.css">
     <link rel="stylesheet" href="https://use.typekit.net/hov6pfb.css">
-    <title>Spiral.io</title>
+    <title>Pomodoro Timer - Spiral.io</title>
     <link rel="shortcut icon" type="”image/svg+xml”" href="/spiral-logo.73249af3.svg">
     <script src="/index.4cd70b43.js" defer=""></script>
-    <script src="/pomodoro.3b615548.js" defer=""></script>
+    <script src="/pomodoro.3b615548.js"></script>
     <script src="/pomodoro.24d87240.js" defer=""></script>
     <script src="/pomodoro.7ce6b374.js" defer=""></script>
     <script src="/pomodoro.e352eeea.js" defer=""></script>
+    <script src="/pomodoro.5545b88e.js" defer=""></script>
 </head>
 <body>
     <div id="modal-times" class="modal-times">
@@ -50,6 +51,16 @@
         <a href="/index.html" id="1" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="/plan-icon.19e245f0.svg"></object>Plan</a>
         <a href="# " id="2" class="sidenav-link active" onclick="makeActive(this.id)"><object class="nav-icon" data="/focus-icon.50f9d746.svg"></object>Focus</a>
         <a href="#" id="3" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="/learn-icon.7d83518e.svg"></object>Learn</a>
+        <div id="stopwatch-wrapper">
+            <h3 id="stopwatch-text" style="color: #ffab00" onclick="playPauseCount()">00:00:00</h3>
+            <div id="icon-wrapper" onclick="stopCount()">
+                <object style="width: 20px; pointer-events: none" data="/stop-icon.7d27b69f.svg"></object>
+            </div>
+        </div>
+        
+        <div id="content-wrapper">
+            <iframe style="border-radius: 5px" src="https://open.spotify.com/embed/album/1sDngF4SQKjqUeCYRsxCL1?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
     </div>
     <div class="focus-wrapper">
         <div class="pomodoro-wrapper">

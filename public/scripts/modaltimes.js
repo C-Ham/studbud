@@ -7,7 +7,6 @@ const modalTimes = document.getElementById("modal-times");
 function closeTimesModal() {
   document.getElementById("change-times").reset();
   modalTimes.style.display = "none";
-  resetSession();
  }
 
 function openTimesModal() {
@@ -33,4 +32,5 @@ function onTimesSubmit() {
 
     document.getElementById("change-times").reset();
     closeTimesModal();
+    resetSession();
 }
