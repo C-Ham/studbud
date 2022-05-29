@@ -1,8 +1,9 @@
+//Fetch kanban container to insert new boards into
+const kanbanContainer = document.querySelector(".kanban");
+
 //Fetch parent element to insert tasks into
 const tasklist = document.getElementById("kanban__column-items");
-const totalTasks = document.querySelectorAll(".kanban__column-items");
-// Create an empty array to store tasks
-var taskList = [];
+let totalTasks = document.querySelectorAll(".kanban__column-items");
 
 //Create an empty array to store saved category names and label colors
 var categoryList = [];
@@ -17,6 +18,45 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+function addNewBoard() {
+  let kanbanColumn = document.createElement("div");
+  kanbanColumn.classList.add("kanban__column");
+
+  let kanbanColumnTitle = document.createElement("div");
+  kanbanColumnTitle.classList.add("kanban__column-title");
+  kanbanColumnTitle.contentEditable = true;
+  kanbanColumnTitle.innerHTML = "UNTITLED";
+
+  let kanbanColumnTitleTaskcount = document.createElement("div");
+  kanbanColumnTitleTaskcount.classList.add("kanban__column-title--taskcount");
+  kanbanColumnTitleTaskcount.innerHTML = 0;
+
+  let kanbanButton = document.createElement("button");
+  kanbanButton.classList.add("kanban__button");
+  kanbanButton.setAttribute("onclick", "openModal()");
+  kanbanButton.innerHTML = "+";
+
+  let kanbanColumnItems = document.createElement("div");
+  kanbanColumnItems.id = "kanban__column-items";
+  kanbanColumnItems.classList.add("kanban__column-items");
+  kanbanColumnItems.setAttribute("ondrop", "drop(event, this)");
+  kanbanColumnItems.setAttribute("ondragenter", "dragEnter(event, this)");
+  kanbanColumnItems.setAttribute("ondragover", "dragOver(event, this)");
+  kanbanColumnItems.setAttribute("ondragleave", "dragLeave(event, this)");
+
+
+  kanbanColumn.appendChild(kanbanColumnTitle);
+  kanbanColumn.appendChild(kanbanColumnTitleTaskcount);
+  kanbanColumn.appendChild(kanbanButton);
+  kanbanColumn.appendChild(kanbanColumnItems);
+
+  kanbanContainer.insertBefore(kanbanColumn, kanbanContainer.lastElementChild);
+}
+
+function deleteLastBoard() {
+  console.log("last board deleted");
+}
+
 //Add task to array
 function addTask(taskTitle, taskDescription, priorityRating, taskCategory, dueDate, estimatedTime) {
   //Define our task object
@@ -29,9 +69,6 @@ function addTask(taskTitle, taskDescription, priorityRating, taskCategory, dueDa
     dueDate,
     estimatedTime,
   };
-
-  // Add the task to our array of tasks
-  taskList.push(task);
 
   //Check to see if the category exists yet
   let categoryObj;
@@ -106,7 +143,8 @@ function renderTask(task, cat) {
   //Append task to array
   tasklist.appendChild(item);
 
-  totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length - 1);
+  totalTasks = document.querySelectorAll(".kanban__column-items");
+  totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length);
 }
 
 //Some test tasks to make sure nothing breaks

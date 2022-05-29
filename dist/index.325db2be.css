@@ -27,6 +27,37 @@ html {
   display: inline-block;
 }
 
+#action-wrapper {
+  flex-direction: column;
+  gap: 10px;
+  display: flex;
+}
+
+.board-action {
+  height: 40px;
+  color: #2e4376;
+  cursor: pointer;
+  background-color: #021530;
+  border: 1px solid #1d2a3e;
+  border-radius: 5px;
+  flex-basis: 40px;
+  justify-content: center;
+  margin-right: 15px;
+  padding: 15px;
+  font-family: Inter Thin;
+  font-size: 50px;
+  display: flex;
+}
+
+.board--icon {
+  filter: brightness(0) saturate() invert(62%) sepia(15%) saturate(591%) hue-rotate(185deg) brightness(86%) contrast(90%);
+  pointer-events: none;
+}
+
+.board-action:hover .board--icon {
+  filter: none;
+}
+
 [contenteditable] {
   outline: 0 solid #0000;
 }
@@ -119,7 +150,7 @@ p {
   font-size: 50px;
 }
 
-.kanban__button:hover {
+.kanban__button:hover, .kanban__button-add:hover {
   background-color: #031126;
 }
 
@@ -461,7 +492,7 @@ svg {
   flex: 1;
   margin: 0;
   font-family: Inter ExtraLight;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 #icon-wrapper {
@@ -475,7 +506,7 @@ svg {
   background-color: #091e42;
   border-radius: 5px;
   flex-direction: row;
-  gap: 15px;
+  gap: 25px;
   padding: 15px 20px;
   display: flex;
   position: absolute;

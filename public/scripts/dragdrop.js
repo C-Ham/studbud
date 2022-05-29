@@ -47,5 +47,7 @@ function drop(e, el) {
 
     // display the draggable element
     draggable.classList.remove('hide');
-    totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length - 1);
+
+    totalTasks = document.querySelectorAll(".kanban__column-items");
+    totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length);
 }

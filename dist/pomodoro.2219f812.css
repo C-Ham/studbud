@@ -187,7 +187,7 @@ svg {
   flex: 1;
   margin: 0;
   font-family: Inter ExtraLight;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 #icon-wrapper {
@@ -201,7 +201,7 @@ svg {
   background-color: #091e42;
   border-radius: 5px;
   flex-direction: row;
-  gap: 15px;
+  gap: 25px;
   padding: 15px 20px;
   display: flex;
   position: absolute;

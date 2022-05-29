@@ -69,7 +69,6 @@
         <h3 class="logo"><object class="logo-icon" data="/spiral-logo.73249af3.svg"></object>Spiral.io</h3>
         <a href="#" id="1" class="sidenav-link active" onclick="makeActive(this.id)"><object class="nav-icon" data="/plan-icon.19e245f0.svg"></object>Plan</a>
         <a href="/pomodoro.html" id="2" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="/focus-icon.50f9d746.svg"></object>Focus</a>
-        <a href="#" id="3" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="/learn-icon.7d83518e.svg"></object>Learn</a>
         <div id="stopwatch-wrapper">
             <h3 id="stopwatch-text" style="color: #ffab00" onclick="playPauseCount()">00:00:00</h3>
             <div id="icon-wrapper" onclick="stopCount()">
@@ -85,20 +84,22 @@
 
         <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">TO-DO</div><div class="kanban__column-title--taskcount">0</div>
             <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
-            <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)">
-            </div>
+            <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"></div>
         </div>
 
         <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">IN PROGRESS</div><div class="kanban__column-title--taskcount">0</div>
             <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
-            <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)">
-            </div>
+            <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"></div>
         </div>
 
         <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">DONE</div><div class="kanban__column-title--taskcount">0</div>
             <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
-            <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)">
-            </div>
+            <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"></div>
+        </div>
+
+        <div id="action-wrapper">
+            <div class="board-action" onclick="addNewBoard()"><object class="board--icon" data="/add-board-icon.319e5b5c.svg"></object></div>
+            <div class="board-action" onclick="deleteLastBoard()"><object class="board--icon" data="/delete-board-icon.2fb4c118.svg"></object></div>
         </div>
     </div>
 </body>

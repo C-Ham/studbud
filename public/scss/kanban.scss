@@ -23,6 +23,41 @@ html { font-family: 'Inter', sans-serif; }
     border: 1px solid #1d2a3e;
 }
 
+#action-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.board-action {
+    display: flex;
+    justify-content: center;
+
+    background-color: variables.$navGray;
+    border-radius: 5px;
+    padding: 15px;
+    flex-basis: 40px;
+    height: 40px;
+    margin-right:15px;
+    border: 1px solid #1d2a3e;
+
+    color: #2e4376;
+    font-family: Inter Thin;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.board--icon {
+    filter: variables.$iconGray;
+    pointer-events: none;
+}
+
+.board-action:hover {
+    .board--icon {
+        filter: none;
+    }
+}
+
 [contenteditable] {
     outline: 0px solid transparent;
 }
@@ -115,7 +150,7 @@ p {
     padding-bottom:5px;
 }
 
-.kanban__button:hover {
+.kanban__button:hover, .kanban__button-add:hover {
     background-color:variables.$baseGray;
 }
 
