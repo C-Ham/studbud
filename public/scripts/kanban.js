@@ -54,7 +54,11 @@ function addNewBoard() {
 }
 
 function deleteLastBoard() {
-  console.log("last board deleted");
+  var allBoards = document.querySelectorAll(".kanban__column");
+
+  if (allBoards.length > 2) {
+    allBoards[allBoards.length - 1].remove();
+  }
 }
 
 //Add task to array

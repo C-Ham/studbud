@@ -48,7 +48,8 @@ function addNewBoard() {
     kanbanContainer.insertBefore(kanbanColumn, kanbanContainer.lastElementChild);
 }
 function deleteLastBoard() {
-    console.log("last board deleted");
+    var allBoards = document.querySelectorAll(".kanban__column");
+    if (allBoards.length > 2) allBoards[allBoards.length - 1].remove();
 }
 //Add task to array
 function addTask(taskTitle, taskDescription, priorityRating, taskCategory, dueDate, estimatedTime) {
