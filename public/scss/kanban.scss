@@ -5,12 +5,38 @@ html { font-family: 'Inter', sans-serif; }
   html { font-family: 'Inter var', sans-serif; }
 }
 
-.kanban {
+.title-wrapper {
+    font-family: Inter SemiBold;
+    font-size: 14px;
+    color: variables.$textWhite;
+    margin-bottom: 10px;
+}
+
+#page-container {
     display: flex;
+    flex-direction: column;
     margin-left: 230px;
     margin-right: 30px;
     margin-top: 50px;
     padding: 20px;
+}
+
+.kanban {
+    display: flex;
+    
+}
+
+#today-focus {
+    margin-bottom: 25px;
+    min-height: 100px;
+}
+
+#today-focus--items {
+    display: flex;
+    width: 100%;
+    min-height: 100px;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .kanban__column {

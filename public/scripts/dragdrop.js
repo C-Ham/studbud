@@ -48,6 +48,6 @@ function drop(e, el) {
     // display the draggable element
     draggable.classList.remove('hide');
 
-    totalTasks = document.querySelectorAll(".kanban__column-items");
+    totalTasks = document.querySelectorAll(".kanban__column-items:not([id*='today-focus--items'])");
     totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length);
 }

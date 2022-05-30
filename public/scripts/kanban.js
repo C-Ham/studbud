@@ -3,7 +3,7 @@ const kanbanContainer = document.querySelector(".kanban");
 
 //Fetch parent element to insert tasks into
 const tasklist = document.getElementById("kanban__column-items");
-let totalTasks = document.querySelectorAll(".kanban__column-items");
+let totalTasks = document.querySelectorAll(".kanban__column-items:not([id*='today-focus--items'])");
 
 //Create an empty array to store saved category names and label colors
 var categoryList = [];
@@ -104,16 +104,14 @@ function addTask(taskTitle, taskDescription, priorityRating, taskCategory, dueDa
   renderTask(task, categoryObj);
 }
 
-
 // Function to display the item on the page
 function renderTask(task, cat) {
   //Create an HTML element as a container for our task
-  let item = document.createElement("div");
-  item.classList.add('kanban__column-task');
-  item.setAttribute("draggable", true);
-  item.id = task.idNumber;
-
-  item.addEventListener('dragstart', dragStart);
+  let kanbanTaskContainer = document.createElement("div");
+  kanbanTaskContainer.classList.add('kanban__column-task');
+  kanbanTaskContainer.setAttribute("draggable", true);
+  kanbanTaskContainer.id = task.idNumber;
+  kanbanTaskContainer.addEventListener('dragstart', dragStart);
 
   //Define color-coded priority icons using classes and unicode chars
   const lowPriority = "<div><p class='low-priority'>" + "&#9670" + "</p></div>";
@@ -142,12 +140,12 @@ function renderTask(task, cat) {
   let priority = taskPriority + "</div>";
 
   //Append task metadata into the DOM
-  item.innerHTML = categoryDiv + title + desc + time + priority;
+  kanbanTaskContainer.innerHTML = categoryDiv + title + desc + time + priority;
 
   //Append task to array
-  tasklist.appendChild(item);
+  tasklist.appendChild(kanbanTaskContainer);
 
-  totalTasks = document.querySelectorAll(".kanban__column-items");
+  totalTasks = document.querySelectorAll(".kanban__column-items:not([id*='today-focus--items'])");
   totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length);
 }
 

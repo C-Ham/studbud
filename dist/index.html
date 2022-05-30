@@ -80,27 +80,33 @@
         </div>
     </div>
 
-    <div class="kanban">
+    <div id="page-container">
+        <div class="title-wrapper">TODAY'S FOCUS</div>
+        <div id="today-focus" class="kanban__column"><div id="today-focus--items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"></div></div>
+        <div class="title-wrapper">PLANNER BOARD</div>
 
-        <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">TO-DO</div><div class="kanban__column-title--taskcount">0</div>
-            <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
-            <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"></div>
-        </div>
+        <div class="kanban">
+            <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">TO-DO</div><div class="kanban__column-title--taskcount">0</div>
+                <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
+                <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"></div>
+            </div>
 
-        <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">IN PROGRESS</div><div class="kanban__column-title--taskcount">0</div>
-            <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
-            <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"></div>
-        </div>
+            <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">IN PROGRESS</div><div class="kanban__column-title--taskcount">0</div>
+                <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
+                <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"></div>
+            </div>
 
-        <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">DONE</div><div class="kanban__column-title--taskcount">0</div>
-            <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
-            <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"></div>
-        </div>
+            <div class="kanban__column"><div class="kanban__column-title" contenteditable="true">DONE</div><div class="kanban__column-title--taskcount">0</div>
+                <button alt="Add Task" class="kanban__button" onclick="openModal()">+</button>
+                <div id="kanban__column-items" class="kanban__column-items" ondrop="drop(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"></div>
+            </div>
 
-        <div id="action-wrapper">
-            <div class="board-action" onclick="addNewBoard()"><object class="board--icon" data="/add-board-icon.319e5b5c.svg"></object></div>
-            <div class="board-action" onclick="deleteLastBoard()"><object class="board--icon" data="/delete-board-icon.2fb4c118.svg"></object></div>
+            <div id="action-wrapper">
+                <div class="board-action" onclick="addNewBoard()"><object class="board--icon" data="/add-board-icon.319e5b5c.svg"></object></div>
+                <div class="board-action" onclick="deleteLastBoard()"><object class="board--icon" data="/delete-board-icon.2fb4c118.svg"></object></div>
+            </div>
         </div>
     </div>
+
 </body>
 </html>
