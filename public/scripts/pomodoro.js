@@ -44,6 +44,15 @@ var completedStudySessions = -1;
 //Define variable to set interval for the timer countdown function
 var timerStart;
 
+window.addEventListener('resize', calcPadding);
+
+function calcPadding() {
+    var focusWrapper = document.querySelector(".focus-wrapper");
+    var calculatedPadding = window.innerWidth / 40;
+    if (calculatedPadding > 33) { calculatedPadding = 33; }
+    focusWrapper.style.padding = "0px " + calculatedPadding + "%";
+}
+
 //Triggered when a new session type is started, either from completion or a button onclick event
 //Specify the session type and whether it counts as a completed session 
 function makeActiveSession(session) {

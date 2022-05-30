@@ -1,7 +1,16 @@
 const stopwatchText = document.getElementById("stopwatch-text");
+const timeMobileText = document.getElementById("time-mobile-wrapper");
+
 let paused = true;
 var timerStart;
+var updateTime;
 var counter = 1;
+
+function updateCurrentTime() {
+    if (timeMobileText) {
+        timeMobileText.innerHTML = moment().format('hh:mm a');
+    }
+}
 
 function stopCount() {
     paused = true;
@@ -27,3 +36,6 @@ function playPauseCount() {
 function updateTime() {
     stopwatchText.innerHTML = moment().hour(0).minute(0).second(counter++).format('HH:mm:ss');
 }
+
+updateCurrentTime();
+updateTime = setInterval(function() { updateCurrentTime(); }, 10000);

@@ -32,6 +32,7 @@ html {
 #today-focus {
   min-height: 100px;
   margin-bottom: 25px;
+  margin-right: 0;
 }
 
 #today-focus--items {
@@ -132,6 +133,7 @@ p {
   color: #ebecf0;
   background-color: #091e42;
   border-radius: 3px;
+  flex: 1;
   margin-bottom: 5px;
   padding: 15px;
 }
@@ -539,6 +541,12 @@ svg {
   bottom: 115px;
 }
 
+@media only screen and (max-width: 800px) {
+  #keyword-lookup {
+    display: none;
+  }
+}
+
 html {
   font-family: Inter, sans-serif;
 }
@@ -781,6 +789,34 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+#mobile-nav-wrapper {
+  display: none;
+}
+
+#time-mobile-wrapper {
+  color: #ebecf0;
+  background-color: #6554c0;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  .sidenav {
+    display: none;
+  }
+
+  #page-container {
+    margin: 50px 0 0;
+  }
+
+  #mobile-nav-wrapper {
+    min-width: 250px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    display: flex;
+  }
 }
 
 .sidenav-link {

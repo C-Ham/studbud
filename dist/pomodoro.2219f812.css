@@ -208,4 +208,10 @@ svg {
   bottom: 115px;
 }
 
+@media only screen and (max-width: 800px) {
+  #keyword-lookup {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=pomodoro.2219f812.css.map */

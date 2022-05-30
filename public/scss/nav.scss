@@ -37,6 +37,34 @@ body {
     border-right: 1px solid #1d2a3e;
 }
 
+#mobile-nav-wrapper {
+    display: none;
+}
+
+#time-mobile-wrapper {
+    color: variables.$textWhite;
+    background-color: variables.$helpPurple;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    .sidenav {
+        display: none;
+    }
+
+    #page-container {
+        margin: 50px 0px 0px 0px;
+    }
+
+    #mobile-nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        min-width: 250px;
+    }
+}
+
 .sidenav-link {
     font-family: Inter;
     text-decoration: none;
