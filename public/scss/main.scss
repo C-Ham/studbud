@@ -1,0 +1,15 @@
+@use 'variables';
+@import "nav";
+@import "kanban";
+@import "modal";
+@import "pomodoro";
+@import "keywordlookup";
+@import "modaltimes";
+
+
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}

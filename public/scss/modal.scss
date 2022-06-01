@@ -28,7 +28,7 @@ h2 {
 
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 10000;
     left: 0;
     top: 0;
     height: 100%;
@@ -44,12 +44,20 @@ h2 {
     padding: 40px 100px;
     border-radius: 5px;
     color: #fff;
+    min-width: 600px;
     background-color: variables.$navGray;
 }
 
 .dropdown-list {
     display: flex;
     gap: 10px;
+}
+
+/* Mobile-rendered content */
+@media only screen and (max-width: 850px) {
+    .dropdown-list {
+        flex-direction: column;
+    }
 }
 
 .dropdown-wrapper {

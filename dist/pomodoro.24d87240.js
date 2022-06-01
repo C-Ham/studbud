@@ -217,5 +217,6 @@ function percentToOffset(percent) {
 //Initialise a new study session with default time specified
 makeActiveSession(studyButton);
 renderTime(Math.floor(studyTime / 60), studyTime % 60);
+calcPadding();
 
 //# sourceMappingURL=pomodoro.24d87240.js.map

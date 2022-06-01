@@ -1,11 +1,6 @@
 @use 'variables';
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
-@import "kanban";
-@import "modal";
-@import "pomodoro";
-@import "keywordlookup";
-@import "modaltimes";
 @supports (font-variation-settings: normal) {
   html { font-family: 'Inter var', sans-serif; }
 }
@@ -26,6 +21,7 @@ body {
 }
 
 .sidenav {
+    z-index: 5000;
     width: 170px;
     height: 100%;
     position: fixed;
@@ -41,6 +37,16 @@ body {
     display: none;
 }
 
+#mobile-nav--bkg {
+    background-color: rgba(0, 6, 16, 0.85);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: none;
+}
+
 #time-mobile-wrapper {
     color: variables.$textWhite;
     background-color: variables.$helpPurple;
@@ -48,9 +54,24 @@ body {
     padding: 5px 20px;
 }
 
-@media only screen and (max-width: 800px) {
+/* Desktop-rendered content */
+@media only screen and (min-width: 851px) {
+    .sidenav {
+        display: block !important;
+        min-width: auto;
+        width: 170px !important;
+    }
+
+    #mobile-nav--bkg {
+        display: none !important;
+    }
+}
+
+/* Mobile-rendered content */
+@media only screen and (max-width: 850px) {
     .sidenav {
         display: none;
+        min-width: 170px;
     }
 
     #page-container {

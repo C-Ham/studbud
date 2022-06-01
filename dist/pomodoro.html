@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/index.325db2be.css">
-    <link rel="stylesheet" href="/pomodoro.2219f812.css">
+    <link rel="stylesheet" href="/pomodoro.c74267d1.css">
     <link rel="stylesheet" href="https://use.typekit.net/hov6pfb.css">
     <title>Pomodoro Timer - Spiral.io</title>
     <link rel="shortcut icon" type="”image/svg+xml”" href="/spiral-logo.73249af3.svg">
-    <script src="/index.4cd70b43.js" defer=""></script>
+    
+    <script src="/pomodoro.7fe6e88c.js" defer=""></script>
     <script src="/pomodoro.3b615548.js"></script>
     <script src="/pomodoro.24d87240.js" defer=""></script>
     <script src="/pomodoro.7ce6b374.js" defer=""></script>
@@ -50,21 +50,24 @@
         <h3 class="logo"><object class="logo-icon" data="/spiral-logo.73249af3.svg"></object>Spiral.io</h3>
         <a href="/index.html" id="1" class="sidenav-link" onclick="makeActive(this.id)"><object class="nav-icon" data="/plan-icon.19e245f0.svg"></object>Plan</a>
         <a href="# " id="2" class="sidenav-link active" onclick="makeActive(this.id)"><object class="nav-icon" data="/focus-icon.50f9d746.svg"></object>Focus</a>
-        <div id="stopwatch-wrapper">
-            <h3 id="stopwatch-text" style="color: #ffab00" onclick="playPauseCount()">00:00:00</h3>
-            <div id="icon-wrapper" onclick="stopCount()">
-                <object style="width: 20px; pointer-events: none" data="/stop-icon.7d27b69f.svg"></object>
-            </div>
-        </div>
         
-        <div id="content-wrapper">
-            <iframe style="border-radius: 5px" src="https://open.spotify.com/embed/album/1sDngF4SQKjqUeCYRsxCL1?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        <div id="navbar--content-wrapper">
+            <div id="stopwatch">
+                <h3 id="stopwatch--text" style="color: #ffab00" onclick="playPauseCount()">00:00:00</h3>
+                <div id="stopwatch--reset" onclick="stopCount()">
+                    <object style="width: 20px; pointer-events: none" data="/stop-icon.7d27b69f.svg"></object>
+                </div>
+            </div>
+        
+            <iframe style="min-width: 95%; border-radius: 5px" src="https://open.spotify.com/embed/album/1sDngF4SQKjqUeCYRsxCL1?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
         </div>
     </div>
+    <div id="mobile-nav--bkg" onclick="closeMobileNav()"></div>
+    
     <div class="focus-wrapper">
         <div class="pomodoro-wrapper">
             <div id="mobile-nav-wrapper">
-                <object style="max-width: 24px; flex: 1" data="/navbar-mobile-icon.a1e870b0.svg"></object>
+                <div id="nav-wrapper-onclick" style="max-width: 24px; flex: 1" onclick="openMobileNav()"><object style="pointer-events: none" data="/navbar-mobile-icon.a1e870b0.svg"></object></div>
                 <div id="time-mobile-wrapper"></div>
                 <object style="max-width: 26px; flex: 1" class="logo-icon" data="/spiral-logo.73249af3.svg"></object>
             </div>

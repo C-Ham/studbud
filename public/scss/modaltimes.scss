@@ -26,6 +26,13 @@ h2 {
     gap: 30px;
 }
 
+/* Mobile-rendered content */
+@media only screen and (max-width: 1000px) {
+    #form-wrapper {
+        flex-direction: column;
+    }
+}
+
 .input-wrapper {
     flex: 1;
 }
@@ -37,7 +44,7 @@ h2 {
 
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 10000;
     left: 0;
     top: 0;
     height: 100%;
@@ -47,6 +54,7 @@ h2 {
 }
 
 .modal-times--popup {
+    min-width: 600px;
     box-sizing: border-box;
     margin: 15% auto;
     width: 60%;

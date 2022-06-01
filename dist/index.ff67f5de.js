@@ -1,4 +1,5 @@
 //Fetch form elements to use for future addTask() calls
+const addtaskModal = document.getElementById("modal");
 const taskTitle = document.getElementById("task-title");
 const taskDesc = document.getElementById("task-desc");
 const priority = document.getElementById("priority");
@@ -9,6 +10,12 @@ const completionTime = document.getElementById("completion-time");
 category.addEventListener("keypress", function(e) {
     if (e.key === "Enter") e.preventDefault();
 });
+function closeModal() {
+    addtaskModal.style.display = "none";
+}
+function openModal() {
+    addtaskModal.style.display = "block";
+}
 //Triggered when submit button is clicked on the "Add Task" Modal
 function onSubmit() {
     //Form validation

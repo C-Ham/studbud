@@ -1,4 +1,4 @@
-const stopwatchText = document.getElementById("stopwatch-text");
+const stopwatchText = document.getElementById("stopwatch--text");
 const timeMobileText = document.getElementById("time-mobile-wrapper");
 
 let paused = true;
@@ -20,11 +20,16 @@ function stopCount() {
     stopwatchText.innerHTML = moment().hour(0).minute(0).second(0).format('HH:mm:ss');
 }
 
+function updateTime() {
+    stopwatchText.innerHTML = moment().hour(0).minute(0).second(counter++).format('HH:mm:ss');
+    updateCurrentTime();
+}
+
 function playPauseCount() {
     if(paused) {
         paused = false;
         stopwatchText.style.color = "#FFF";
-        timerStart = setInterval(function() { updateTime(); }, 1000);
+        timerStart = setInterval(updateTime, 1000);
     }
     else {
         paused = true;
@@ -33,9 +38,4 @@ function playPauseCount() {
     }
 }
 
-function updateTime() {
-    stopwatchText.innerHTML = moment().hour(0).minute(0).second(counter++).format('HH:mm:ss');
-}
-
 updateCurrentTime();
-updateTime = setInterval(function() { updateCurrentTime(); }, 10000);

@@ -174,14 +174,14 @@ svg {
   display: none;
 }
 
-#content-wrapper {
-  margin-left: -16px;
-  padding: 5px;
-  position: absolute;
-  bottom: 0;
+#navbar--content-wrapper {
+  height: calc(100% - 220px);
+  flex-direction: column;
+  justify-content: flex-end;
+  display: flex;
 }
 
-#stopwatch-text {
+#stopwatch--text {
   color: #ebecf0;
   text-align: left;
   flex: 1;
@@ -190,22 +190,21 @@ svg {
   font-size: 20px;
 }
 
-#icon-wrapper {
+#stopwatch--reset {
   align-items: center;
   display: flex;
 }
 
-#stopwatch-wrapper {
+#stopwatch {
   text-align: center;
   cursor: pointer;
   background-color: #091e42;
   border-radius: 5px;
   flex-direction: row;
   gap: 25px;
+  margin-bottom: 10px;
   padding: 15px 20px;
   display: flex;
-  position: absolute;
-  bottom: 115px;
 }
 
 @media only screen and (max-width: 800px) {

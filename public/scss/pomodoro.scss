@@ -173,14 +173,14 @@ svg {
   display: none;
 }
 
-#content-wrapper {
-  position: absolute;
-  bottom: 0px;
-  margin-left: -16px;
-  padding: 5px;
+#navbar--content-wrapper {
+  height: calc(100% - 220px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-#stopwatch-text {
+#stopwatch--text {
   color: variables.$textWhite;
   font-size: 20px;
   font-family: Inter ExtraLight;
@@ -189,12 +189,12 @@ svg {
   text-align: left;
 }
 
-#icon-wrapper {
+#stopwatch--reset {
   display: flex;
   align-items: center;
 }
 
-#stopwatch-wrapper {
+#stopwatch {
   display: flex;
   flex-direction: row;
   background-color: variables.$modalGray;
@@ -203,12 +203,5 @@ svg {
   padding: 15px 20px;
   cursor: pointer;
   gap: 25px;
-  position: absolute;
-  bottom: 115px;
-}
-
-@media only screen and (max-width: 800px) {
-  #keyword-lookup {
-    display: none;
-  }
+  margin-bottom: 10px;
 }
