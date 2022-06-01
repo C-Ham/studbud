@@ -22,18 +22,32 @@ function dragLeave(e, el) {
 //When task is placed, remove highlight class from board
 //And fetch the previously stored element data
 //Then append child to new board parent in DOM
-function drop(e, el) {
-    if (el) el.parentElement.classList.remove('drag-over');
-    // get the draggable element
+//Handling drop events on invalid targets
+function invalidDrop(e) {
     const id = e.dataTransfer.getData('text/plain');
     const draggable = document.getElementById(id);
-    // add it to the drop target
-    el.appendChild(draggable);
-    // display the draggable element
     draggable.classList.remove('hide');
-    totalTasks = document.querySelectorAll(".kanban__column-items:not([id*='today-focus--items'])");
-    totalTasks.forEach((board)=>board.parentNode.children[1].innerHTML = board.childNodes.length
-    );
+}
+function drop(e, el) {
+    //Check to make sure the drop target is valid
+    if (el) el.parentElement.classList.remove('drag-over');
+    //If there are more than 3 items in the "Today's Focus" dropbox, invalidate the drop
+    if (el.id == "today-focus--items" && el.children.length >= 4) invalidDrop(e);
+    else {
+        // Fetch the draggable element
+        const id = e.dataTransfer.getData('text/plain');
+        const draggable = document.getElementById(id);
+        // Append the draggable element to the drop target
+        //Insert before the placeholder if it's dropped on "Today's Focus" dropbox
+        if (el.id == "today-focus--items") el.insertBefore(draggable, el.firstChild);
+        else el.appendChild(draggable);
+        // Display the draggable element
+        draggable.classList.remove('hide');
+        totalTasks = document.querySelectorAll(".kanban__column-items:not([id*='today-focus--items'])");
+        totalTasks.forEach((board)=>board.parentNode.children[1].innerHTML = board.childNodes.length
+        );
+        if (el.id == "today-focus--items" && el.children.length == 4) document.querySelector(".task-placeholder").style.display = "none";
+    }
 }
 
 //# sourceMappingURL=index.db8f8f7d.js.map

@@ -244,6 +244,7 @@ function renderTime(minutes, seconds) {
     //Update countdown timer given minutes and seconds parameters
     seconds = seconds < 10 ? '0' + seconds : seconds;
     countdownTimer.innerHTML = minutes + ":" + seconds;
+    document.title = minutes + ":" + seconds + "  - Pomodoro Timer - Spiral.io"
 
     //Calculate the time for the next break
     var nextBreak = moment().add(minutes, 'm').add(seconds, 's');

@@ -56,7 +56,7 @@ function addNewBoard() {
 function deleteLastBoard() {
   var allBoards = document.querySelectorAll(".kanban__column");
 
-  if (allBoards.length > 2) {
+  if (allBoards.length > 3) {
     allBoards[allBoards.length - 1].remove();
   }
 }

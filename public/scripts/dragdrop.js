@@ -33,21 +33,48 @@ function dragLeave(e, el) {
 //And fetch the previously stored element data
 //Then append child to new board parent in DOM
 
+
+//Handling drop events on invalid targets
+function invalidDrop(e) {
+    const id = e.dataTransfer.getData('text/plain');
+    const draggable = document.getElementById(id);
+    draggable.classList.remove('hide');
+}
+
 function drop(e, el) {
+
+    //Check to make sure the drop target is valid
     if (el) {
         el.parentElement.classList.remove('drag-over');
     }
 
-    // get the draggable element
-    const id = e.dataTransfer.getData('text/plain');
-    const draggable = document.getElementById(id);
+    //If there are more than 3 items in the "Today's Focus" dropbox, invalidate the drop
+    if ((el.id == "today-focus--items") && (el.children.length >= 4)) {
+        invalidDrop(e);
+    }
 
-    // add it to the drop target
-    el.appendChild(draggable);
+    else {
+        // Fetch the draggable element
+        const id = e.dataTransfer.getData('text/plain');
+        const draggable = document.getElementById(id);
 
-    // display the draggable element
-    draggable.classList.remove('hide');
+        // Append the draggable element to the drop target
+        //Insert before the placeholder if it's dropped on "Today's Focus" dropbox
+        if (el.id == "today-focus--items") { 
+            el.insertBefore(draggable, el.firstChild); 
+        }
+        else { 
+            el.appendChild(draggable); 
+        }
 
-    totalTasks = document.querySelectorAll(".kanban__column-items:not([id*='today-focus--items'])");
-    totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length);
+        // Display the draggable element
+        draggable.classList.remove('hide');
+
+        totalTasks = document.querySelectorAll(".kanban__column-items:not([id*='today-focus--items'])");
+        totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length);
+
+        if ((el.id == "today-focus--items") && (el.children.length == 4)) {
+            document.querySelector(".task-placeholder").style.display = "none";
+        }
+    }
 }

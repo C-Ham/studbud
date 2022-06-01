@@ -143,6 +143,14 @@ p {
     flex: 1;
 }
 
+.task-placeholder {
+    border: 3px dashed variables.$modalGray;
+    padding: 15px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    flex: 1;
+}
+
 .kanban__column-task:hover {
     background-color: #0a2147;
 }
