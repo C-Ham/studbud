@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Study tool for programming students">
     <meta name="keywords" content="Programming, study, students">
-    <meta name="author" content="Design by Neesha">
+    <meta name="author" content="Designed by Neesha">
 
     <link rel="stylesheet" href="scss/main.scss">
     <link rel="stylesheet" href="https://use.typekit.net/hov6pfb.css">
@@ -21,7 +21,7 @@
     <script src="scripts/stopwatch.js" defer></script>
 </head>
 
-<body>
+<body ondrop="invalidDrop(event)" ondragover="dragOver(event)">
     <div id="modal" class="modal">
         <div class="modal-popup">
             <h2>Add New Task</h2>
@@ -119,7 +119,7 @@
 
             <div id="action-wrapper">
                 <div class="board-action" onclick="addNewBoard()"><object class="board--icon" data="images/add-board-icon.svg"></object></div>
-                <div class="board-action" onclick="deleteLastBoard()"><object class="board--icon" data="images/delete-board-icon.svg"></object></div>
+                <div class="board-action" onclick="deleteLastBoard()" ondrop="deleteTask(event, this)" ondragenter="dragEnter(event, this)" ondragover="dragOver(event, this)" ondragleave="dragLeave(event, this)"><object class="board--icon" data="images/delete-board-icon.svg"></object></div>
             </div>
         </div>
     </div>

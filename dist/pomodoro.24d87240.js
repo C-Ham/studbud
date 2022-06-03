@@ -29,9 +29,11 @@ let restTime = restMinutes * 60;
 var currentSession = "study";
 var currentCycle = 1;
 //Calculate how many study sessions are completed in the pomodoro cycle (max 4)
-var completedStudySessions = -1;
+var completedStudySessions = 0;
 //Define variable to set interval for the timer countdown function
 var timerStart;
+//Calculate the padding for Pomodoro Timer depending on the screen width
+//We can't resize actual timer because it will break the stroke-dasharray progress indicator
 window.addEventListener('resize', calcPadding);
 function calcPadding() {
     var focusWrapper = document.querySelector(".focus-wrapper");
@@ -39,19 +41,29 @@ function calcPadding() {
     if (calculatedPadding > 33) calculatedPadding = 33;
     focusWrapper.style.padding = "0px " + calculatedPadding + "%";
 }
+//Set a delay for one second (used for temporarily disabling transitions on reset events)
+function delay(time) {
+    return new Promise((resolve)=>setTimeout(resolve, time)
+    );
+}
 //Triggered when a new session type is started, either from completion or a button onclick event
-//Specify the session type and whether it counts as a completed session 
-function makeActiveSession(session) {
+function makeActiveSession(session, incrementSessions = true) {
     var sessionList = document.getElementsByClassName("pomodoro-buttons");
+    //Open the Pomodoro settings menu if the active button is clicked
     if (session.classList.contains("active-state")) openTimesModal();
     else {
+        //Set the state for the new active button
         for (let item of sessionList){
             item.classList.remove("active-state");
             item.firstChild.style = "display: none;";
         }
         session.classList.add("active-state");
         session.firstChild.style = "display: flex;";
+        //Pause the timer so new session doesn't auto-play
         togglePlayPause(pauseBtn);
+        if (!incrementSessions) {
+            if (currentSession == "study") completedStudySessions--;
+        }
         sessionComplete();
         if (session == restButton) {
             currentSession = "rest";
@@ -83,6 +95,7 @@ function togglePlayPause(btn) {
     }
 }
 //Reset the current session in the Pomodoro cycle, but don't increment the completed sessions
+//Fired on "Reset" button click
 function resetSession() {
     if (currentSession == "study") completedStudySessions--;
     togglePlayPause(pauseBtn);
@@ -106,11 +119,6 @@ function skipSession() {
             } else makeActiveSession(breakButton);
     }
 }
-//Set a delay for one second (used for temporarily disabling transitions on reset events)
-function delay(time) {
-    return new Promise((resolve)=>setTimeout(resolve, time)
-    );
-}
 //Reset session times and complete the progress circle, and increment the current session in the Pomodoro cycle
 function sessionComplete() {
     progressCircle.style.strokeDashoffset = 0;
@@ -121,13 +129,6 @@ function sessionComplete() {
     clearInterval(timerStart);
     pauseBtn.classList.add("hidden");
     playBtn.classList.remove("hidden");
-    if (currentSession == "study") completedStudySessions++;
-    resetTimer();
-    if (completedStudySessions == 4) completedStudySessions = 0;
-    sessionNumber.innerHTML = "#" + (completedStudySessions + 1);
-}
-//Reset the progress circle to 0%, and render the time back to the original session time
-function resetTimer() {
     //Temporarily disable progress transition to reset timer, using a promise for delays
     //Without this, when the session restarts, the progress circle rewinds all the way back around
     progressCircle.classList.add("no-transition");
@@ -136,6 +137,7 @@ function resetTimer() {
     );
     let minutes;
     let seconds;
+    //Reset the displayed time to the original amount
     switch(currentSession){
         case "break":
             minutes = Math.floor(breakTime / 60);
@@ -152,6 +154,9 @@ function resetTimer() {
             seconds = studyTime % 60;
             renderTime(minutes, seconds);
     }
+    if (currentSession == "study") completedStudySessions++;
+    if (completedStudySessions == 4) completedStudySessions = 0;
+    sessionNumber.innerHTML = "#" + (completedStudySessions + 1);
 }
 //Update the countdown timer every second
 function updateCountdown(currentSession1) {
@@ -160,8 +165,10 @@ function updateCountdown(currentSession1) {
     if (currentSession1 == "break") {
         minutes = Math.floor(breakTime / 60);
         seconds = breakTime % 60;
-        if (breakTime == 0) sessionComplete();
-        else {
+        if (breakTime == 0) {
+            sessionComplete();
+            makeActiveSession(studyButton, false);
+        } else {
             renderTime(minutes, seconds);
             breakTime--;
             progressCircle.style.strokeDashoffset = percentToOffset(timeToPercent(currentSession1));
@@ -169,8 +176,10 @@ function updateCountdown(currentSession1) {
     } else if (currentSession1 == "rest") {
         minutes = Math.floor(restTime / 60);
         seconds = restTime % 60;
-        if (restTime == 0) sessionComplete();
-        else {
+        if (restTime == 0) {
+            sessionComplete();
+            makeActiveSession(studyButton, false);
+        } else {
             renderTime(minutes, seconds);
             restTime--;
             progressCircle.style.strokeDashoffset = percentToOffset(timeToPercent(currentSession1));
@@ -178,8 +187,11 @@ function updateCountdown(currentSession1) {
     } else {
         minutes = Math.floor(studyTime / 60);
         seconds = studyTime % 60;
-        if (studyTime == 0) sessionComplete();
-        else {
+        if (studyTime == 0) {
+            sessionComplete();
+            if (completedStudySessions == 0) makeActiveSession(restButton, false);
+            else makeActiveSession(breakButton, false);
+        } else {
             renderTime(minutes, seconds);
             studyTime--;
             progressCircle.style.strokeDashoffset = percentToOffset(timeToPercent(currentSession1));
@@ -216,7 +228,7 @@ function percentToOffset(percent) {
     return 1159 - 1159 * percent;
 }
 //Initialise a new study session with default time specified
-makeActiveSession(studyButton);
+makeActiveSession(studyButton, false);
 renderTime(Math.floor(studyTime / 60), studyTime % 60);
 calcPadding();
 

@@ -8,20 +8,32 @@ function dragStart(e) {
 //Add highlight class to board when task is dragged over
 function dragEnter(e, el) {
     e.preventDefault();
-    if (el) el.parentElement.classList.add('drag-over');
+    if (el) {
+        if (el.classList.contains("board-action")) el.classList.add('drag-over');
+        else el.parentElement.classList.add('drag-over');
+    }
 }
 //Add highlight class to board when task is dragged over
 function dragOver(e, el) {
     e.preventDefault();
-    if (el) el.parentElement.classList.add('drag-over');
+    if (el) {
+        if (el.classList.contains("board-action")) el.classList.add('drag-over');
+        else el.parentElement.classList.add('drag-over');
+    }
 }
 //Remove highlight class from board when task is not being dragged over
 function dragLeave(e, el) {
-    if (el) el.parentElement.classList.remove('drag-over');
+    if (el) {
+        if (el.classList.contains("board-action")) el.classList.remove('drag-over');
+        else el.parentElement.classList.remove('drag-over');
+    }
 }
 //When task is placed, remove highlight class from board
 //And fetch the previously stored element data
 //Then append child to new board parent in DOM
+function invalidDragOver(e) {
+    e.preventDefault();
+}
 //Handling drop events on invalid targets
 function invalidDrop(e) {
     const id = e.dataTransfer.getData('text/plain');
@@ -48,6 +60,15 @@ function drop(e, el) {
         );
         if (el.id == "today-focus--items" && el.children.length == 4) document.querySelector(".task-placeholder").style.display = "none";
     }
+}
+function deleteTask(e, el) {
+    el.classList.remove('drag-over');
+    const id = e.dataTransfer.getData('text/plain');
+    const draggable = document.getElementById(id);
+    draggable.remove();
+    totalTasks = document.querySelectorAll(".kanban__column-items:not([id*='today-focus--items'])");
+    totalTasks.forEach((board)=>board.parentNode.children[1].innerHTML = board.childNodes.length
+    );
 }
 
 //# sourceMappingURL=index.db8f8f7d.js.map
