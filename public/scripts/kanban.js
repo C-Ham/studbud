@@ -1,16 +1,30 @@
+//DESCRIPTION: Implementation (no API) for the Kanban board
+//This includes adding tasks and boards into the DOM, as well as 
+//Calculating category labels programmatically (new task categories are
+//added to the DOM with new label colors, whereas existing categories
+//have matching label colors)
+
+
+
 //Fetch kanban container to insert new boards into
 const kanbanContainer = document.querySelector(".kanban");
 
-//Fetch parent element to insert tasks into
-const tasklist = document.getElementById("kanban__column-items");
+//Fetch the first board dropzone for inserting new tasks into (default behavior)
+const taskDropContainer = document.getElementById("kanban__column-items");
+
+//Fetch all parent elements to insert tasks into
+//This is defined as the valid dropzone inside each kanban board
+//(Exclude the "Today's Focus" board, since it has custom implementation)
 let totalTasks = document.querySelectorAll(".kanban__column-items:not([id*='today-focus--items'])");
 
 //Create an empty array to store saved category names and label colors
 var categoryList = [];
 
-//List of available label colors
+//List of available label colors, same hex as Sass variables
 var colorList = ["#6554C0", "#0065FF", "#FF5630", "#00B8D9", "#36B37E", "#FFAB00"]
+
 //Pointer to indicate which label color should be used next
+//(This ensures that conflicting label colors are minimised)
 let colorPos = 0;
 
 //Generate (mostly) unique ID for each task
@@ -18,6 +32,7 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+//Handles adding new boards to the DOM (fired on "Add Board" button click)
 function addNewBoard() {
   let kanbanColumn = document.createElement("div");
   kanbanColumn.classList.add("kanban__column");
@@ -50,21 +65,25 @@ function addNewBoard() {
   kanbanColumn.appendChild(kanbanButton);
   kanbanColumn.appendChild(kanbanColumnItems);
 
+  //Insert into DOM before the action buttons, but after last board
   kanbanContainer.insertBefore(kanbanColumn, kanbanContainer.lastElementChild);
 }
 
+//Handles deleting boards (fired on "Delete Board/Task" button click)
 function deleteLastBoard() {
   var allBoards = document.querySelectorAll(".kanban__column");
 
+  //Only validate delete event if there are more than 2 boards 
   if (allBoards.length > 3) {
     allBoards[allBoards.length - 1].remove();
   }
 }
 
-//Add task to array
+//Define and pre-render new task object
 function addTask(taskTitle, taskDescription, priorityRating, taskCategory, dueDate, estimatedTime) {
   //Define our task object
   let task = {
+    //Unique ID for future referencing
     idNumber: getRandomInt(99999),
     taskTitle,
     taskDescription,
@@ -74,28 +93,34 @@ function addTask(taskTitle, taskDescription, priorityRating, taskCategory, dueDa
     estimatedTime,
   };
 
-  //Check to see if the category exists yet
+  //Check to see if the category exists yet,
+  //By flattening the array to quickly cross-reference
   let categoryObj;
   let catMap = categoryList.map(cat => cat.name);
+  //If the category doesn't exist yet...
   if(!catMap.includes(task.taskCategory)) {
-    //If the category doesn't exist yet define our category object
+    //Define our category object
     //Stores the category name and randomised label color
     categoryObj = {
       name: task.taskCategory,
       labelColor: colorList[colorPos],
     };
 
+    //Increment the pointer position to cycle to the next label color
     if (colorPos == colorList.length - 1) { colorPos = 0}
     else { colorPos += 1; }
 
+    //Add the new category name and color to our array
     categoryList.push(categoryObj);
 
+    //Add the new label to the dropdown in the "Add Task" modal
     let catSelect = document.createElement("option");
     catSelect.value = categoryObj.name;
     categories.appendChild(catSelect);
   }
 
   //If the category name already exists, fetch it from the category list
+  //This allows us to reference the existing label color
   else {
     categoryObj = categoryList[catMap.indexOf(task.taskCategory)];
   }
@@ -143,11 +168,14 @@ function renderTask(task, cat) {
   kanbanTaskContainer.innerHTML = categoryDiv + title + desc + time + priority;
 
   //Append task to array
-  tasklist.appendChild(kanbanTaskContainer);
+  taskDropContainer.appendChild(kanbanTaskContainer);
 
+  //Update the task counts for each board, since a new task has been appended to the DOM
   totalTasks = document.querySelectorAll(".kanban__column-items:not([id*='today-focus--items'])");
   totalTasks.forEach(board => board.parentNode.children[1].innerHTML = board.childNodes.length);
 }
+
+
 
 //Some test tasks to make sure nothing breaks
 addTask("2 Persona Slides", "Add user needs, requirements, and frustrations for two to three different user groups", "high", "DECO2017 CLASS", "26/03/2021", 3);

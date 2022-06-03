@@ -1,7 +1,12 @@
+//DESCRIPTION: Handle implementation of regular and mobile navigation menu
+//The mobile navigation menu only appears on media queries of w~<850px
+
+
 
 const navBar = document.querySelector(".sidenav");
 const navBarBkg = document.getElementById("mobile-nav--bkg");
 
+//Handle toggle states for side navigation menu
 function makeActive(link_id) {
     var sidenavList = document.getElementsByClassName("active");
     for (let item of sidenavList) {
@@ -12,6 +17,7 @@ function makeActive(link_id) {
     sidenavLink.classList.add("active");
  }
 
+//Open mobile navigation menu, and display it over page content
  function openMobileNav() {
     navBar.style.display = "block";
     navBar.style.width = "75%";
@@ -20,6 +26,7 @@ function makeActive(link_id) {
     navBarBkg.style.display = "block";
  }
 
+//Close mobile navigation menu
 function closeMobileNav(e) {
     if (e.matches) {
         navBar.style.display = "none";
@@ -29,6 +36,7 @@ function closeMobileNav(e) {
     }
  }
 
+//Close mobile navigation menu
 function closeMobileNav() {
     navBar.style.display = "none";
     navBar.style.minWidth = "auto";

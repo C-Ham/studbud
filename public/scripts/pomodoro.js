@@ -1,3 +1,10 @@
+//DESCRIPTION: Handles implementation of Pomodoro session timer,
+//with rendered break and session counts, a dynamic progress indicator
+//using stroke-dasharray calculations, and reset, pause/play, and skip events
+//Using Moment.js library to simplify time calculations
+
+
+
 //Fetch play and pause button from DOM to check for timer start/pause/stop onclick events
 const playBtn = document.getElementById("play-icon");
 const pauseBtn = document.getElementById("pause-icon");
@@ -82,12 +89,14 @@ function makeActiveSession(session, incrementSessions=true) {
         //Pause the timer so new session doesn't auto-play
         togglePlayPause(pauseBtn);
 
+        //Don't increment the session count, in certain cases if defined
         if (!incrementSessions) {
             if(currentSession == "study") { completedStudySessions--; }
         }
 
         sessionComplete();
 
+        //Change the progress circle color depending on the session type
         if (session == restButton) {
             currentSession = "rest";
             renderTime(Math.floor(restTime / 60), restTime % 60);

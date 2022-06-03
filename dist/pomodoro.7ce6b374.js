@@ -514,16 +514,20 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"d3cgX":[function(require,module,exports) {
+//DESCRIPTION: Handles all implementation for the dictionary lookup API
 const collapseButton = document.getElementById("collapse-btn");
 const keywordLookup = document.getElementById("keyword-lookup");
 const searchField = document.getElementById("search-field");
 const synonymList = document.getElementById("synonym-list");
+//Search dictionary API on Enter key
 searchField.addEventListener("keypress", function(event) {
     if (event.key == "Enter") {
         event.preventDefault();
+        //Clear existing definitions for any previous searches
         const existingDefs = document.querySelectorAll('.keyword-result');
         existingDefs.forEach((def)=>def.remove()
         );
+        //Use fetch API
         fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchField.value}`).then((response)=>response.json()
         ).then((data)=>data[0].meanings.forEach(function(meaning) {
                 if (meaning.synonyms.join(", ")) {
@@ -545,15 +549,6 @@ searchField.addEventListener("keypress", function(event) {
         );
     }
 });
-function collapseToggle() {
-    if (collapseButton.parentElement.classList.contains("collapsed")) {
-        collapseButton.parentElement.classList.remove("collapsed");
-        collapseButton.innerHTML = "&#8250;";
-    } else {
-        collapseButton.parentElement.classList.add("collapsed");
-        collapseButton.innerHTML = "&#8249;";
-    }
-}
 
 },{}]},["gOR4X","d3cgX"], "d3cgX", "parcelRequire60da")
 

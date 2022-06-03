@@ -1,3 +1,7 @@
+//DESCRIPTION: Handles implementation for stopwatch
+//Using Moment.js library to simplify time calculations
+
+
 const stopwatchText = document.getElementById("stopwatch--text");
 const timeMobileText = document.getElementById("time-mobile-wrapper");
 

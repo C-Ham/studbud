@@ -1,3 +1,4 @@
+//DESCRIPTION: Handles implementation for "Add New Task" modal for Kanban board
 //Fetch form elements to use for future addTask() calls
 const addtaskModal = document.getElementById("modal");
 const taskTitle = document.getElementById("task-title");
@@ -7,6 +8,7 @@ const category = document.getElementById("category");
 const categories = document.getElementById("categories");
 const dueDate = document.getElementById("due-date");
 const completionTime = document.getElementById("completion-time");
+//Don't submit form on enter
 category.addEventListener("keypress", function(e) {
     if (e.key === "Enter") e.preventDefault();
 });
@@ -18,7 +20,7 @@ function openModal() {
 }
 //Triggered when submit button is clicked on the "Add Task" Modal
 function onSubmit() {
-    //Form validation
+    //Form validation (only title and description required)
     //Title and description missing
     if (!taskTitle.value && !taskDesc.value) {
         taskTitle.style.border = "2px solid #FF5630";
