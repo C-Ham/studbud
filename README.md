@@ -103,12 +103,12 @@ For this reason, the final website prototype only has 2 pages, instead of 3 as o
 
 # References
 
-####Icons
+#### Icons
 Noun Project: Free Icons & Stock Photos for Everything. (2022). The Noun Project. Retrieved June 3, 2022, from https://thenounproject.com/
 
-####Color Palette
+#### Color Palette
 Color. (2021). Retrieved from https://atlassian.design/foundations/color
 
-####Time Calculations Library
+#### Time Calculations Library
 Chernev, I. (2020). Moment.js | Home. Moment.Js. Retrieved June 3, 2022, from https://momentjs.com/
 
